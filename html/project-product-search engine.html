@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Search Engine - A web application that allows users to search for products across multiple e-commerce platforms simultaneously">
+    <meta name="keywords" content="Product Search, E-commerce, Web Application, JavaScript, HTML, CSS">
+    <meta name="author" content="Manoj Pentapati">
+    <title>Product Search Engine | Manoj Pentapati</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/backtotop.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <style>
+        .project-media-container {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        
+        .media-item {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+        
+        .media-title {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .project-video, .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .project-video {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Search Engine</h1>
+        </header>
+
+        <main>
+            <section id="ProjectDetail">
+                <h1>Product Search Engine</h1>
+                
+                <div class="project-media-container">
+                    <div class="media-item">
+                        <div class="media-title">Demo Video</div>
+                        <video class="project-video" controls controlslist="nodownload" disablepictureinpicture autoplay loop>
+                            <source src="../assets/Product Search engine video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="media-item">
+                        <div class="media-title">Project Screenshot</div>
+                        <img class="project-image" src="../assets/Product Search engine.png" alt="Screenshot of Product Search Engine interface showing search results from multiple e-commerce platforms">
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+                    <p>A web application that allows users to search for products across multiple e-commerce platforms simultaneously. This project focuses on creating a seamless experience for comparing products and prices from various online retailers.</p>
+                    
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                        <ul>
+                            <li><i class="fas fa-search"></i> Search across major e-commerce platforms including Amazon, Flipkart, Meesho, Myntra, Ajio, BuyHatke, MySmartPrice, and Google Shopping</li>
+                            <li><i class="fas fa-image"></i> Automatically loads relevant product images based on search terms using Unsplash API</li>
+                            <li><i class="fas fa-spell-check"></i> Corrects common misspellings in search queries for better results</li>
+                            <li><i class="fas fa-external-link-alt"></i> Open product pages directly or copy URLs to clipboard</li>
+                            <li><i class="fas fa-file-download"></i> Download all generated search links as a text file</li>
+                        </ul>
+
+                    <h3><i class="fas fa-laptop-code"></i> Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="tech-item"><i class="fab fa-js"></i> JavaScript(ES6)</span>
+                            <span class="tech-item"><i class="fas fa-cloud"></i> Unsplash Source API for product images</span>
+                        </div>
+                    
+                    <div class="project-actions">
+                        <a href="https://product-search-engine-chi.vercel.app/" class="btn-primary" aria-label="View live demo on Vercel" target="_blank">
+                            <i class="fas fa-rocket"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/ManojPentapati/Product-Search-Engine" class="btn-primary" aria-label="View source code on GitHub" target="_blank">
+                            <i class="fab fa-github"></i> View Source Code
+                        </a>
+                        <a href="../index.html#Projects" class="btn-secondary" aria-label="Back to projects section">
+                            <i class="fas fa-arrow-left"></i> Back to Projects
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/backtotop.js"></script>
+    <script src="../js/project-detail.js"></script>
+</body>
+</html>

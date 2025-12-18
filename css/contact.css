@@ -1,0 +1,119 @@
+/* Contact Section */
+#Contact form {
+    max-width: 600px;
+    margin: 2.5rem auto 0;
+    background: linear-gradient(135deg, rgba(241, 248, 255, 0.7), rgba(225, 238, 255, 0.7));
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.contact-info {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    flex: 1;
+    min-width: 250px;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.contact-details h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-color);
+    font-size: 1.3rem;
+}
+
+.contact-details p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#Contact label {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+#Contact input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+#Contact input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+#Contact button {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: var(--transition);
+    display: block;
+    width: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+#Contact button:hover {
+    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+    }
+    
+    .contact-item {
+        min-width: 100%;
+    }
+}

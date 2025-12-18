@@ -1,0 +1,11 @@
+/* Education Section */
+#Education h3 {
+    color: var(--primary-color);
+    margin: 1.8rem 0 0.7rem;
+    font-size: 1.5rem;
+}
+
+#Education p {
+    margin-bottom: 0.7rem;
+    color: var(--text-secondary);
+}

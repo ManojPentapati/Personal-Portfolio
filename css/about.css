@@ -1,0 +1,70 @@
+/* About Section */
+#About {
+    background: linear-gradient(135deg, var(--card-bg), rgba(255, 255, 255, 0.7));
+    text-align: left;
+}
+
+#About h1 {
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 0 0 auto;
+}
+
+#About img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    margin: 1.5rem auto;
+    display: block;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    transition: var(--transition);
+}
+
+#About img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+}
+
+#About p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: var(--text-primary);
+}
+
+.resume-button {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-button:hover {
+    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+}

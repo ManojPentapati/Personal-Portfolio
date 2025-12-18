@@ -1,0 +1,68 @@
+/* Print Styles for Portfolio */
+@media print {
+    /* Hide unnecessary elements */
+    .back-to-top, 
+    .social-icons, 
+    nav, 
+    .modal,
+    .project-actions,
+    .hero-scroll-indicator {
+        display: none !important;
+    }
+    
+    /* Reset background colors for printing */
+    body, .container, section, header, footer {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    /* Ensure text is readable */
+    h1, h2, h3, h4, h5, h6 {
+        color: black !important;
+        border-color: #333 !important;
+    }
+    
+    /* Adjust font sizes for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    h1 {
+        font-size: 24pt;
+    }
+    
+    h2 {
+        font-size: 20pt;
+    }
+    
+    h3 {
+        font-size: 18pt;
+    }
+    
+    /* Ensure images are printed */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Remove decorative elements */
+    .project-overlay,
+    .tech-item {
+        background: none !important;
+        border: 1px solid #333 !important;
+    }
+    
+    /* Show URLs for links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+    }
+    
+    /* Don't show URLs for anchor links */
+    a[href^="#"]:after {
+        content: "";
+    }
+}
