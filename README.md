@@ -4,7 +4,7 @@ Welcome to my personal portfolio repository! This project showcases my skills, p
 
 ## 🌐 Live Demo
 
-[View Portfolio](https://your-username.github.io/Portfolio/) *(Replace with your actual deployment URL)*
+[View Portfolio](https://your-username.github.io/Portfolio/) 
 
 ## 📋 Table of Contents
 
@@ -14,8 +14,6 @@ Welcome to my personal portfolio repository! This project showcases my skills, p
 - [Project Highlights](#project-highlights)
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
-- [Customization](#customization)
-- [License](#license)
 - [Contact](#contact)
 
 ## 🙋 About
@@ -149,7 +147,7 @@ portfolio/
 ### Local Development
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portfolio.git
+   git clone https://github.com/ManojPentapati/Personal-Portfolio
    ```
 
 2. Navigate to the project directory:
@@ -169,7 +167,6 @@ portfolio/
 ### Deployment
 The portfolio can be deployed using various platforms:
 - **GitHub Pages**: Enable in repository settings
-- **Netlify**: Drag and drop or connect repository
 - **Vercel**: Import repository for automatic deployments
 
 ## 🎨 Customization
@@ -207,10 +204,6 @@ The portfolio uses CSS variables for consistent theming. Modify colors in `main.
   --text-light: #666;
 }
 ```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📞 Contact
 
