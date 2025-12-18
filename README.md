@@ -4,7 +4,7 @@ Welcome to my personal portfolio repository! This project showcases my skills, p
 
 ## 🌐 Live Demo
 
-[View Portfolio](https://your-username.github.io/Portfolio/) 
+[View Portfolio](https://personal-portfolio-tan-ten.vercel.app/) 
 
 ## 📋 Table of Contents
 
