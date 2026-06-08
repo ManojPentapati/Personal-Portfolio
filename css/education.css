@@ -1,11 +1,384 @@
-/* Education Section */
-#Education h3 {
-    color: var(--primary-color);
-    margin: 1.8rem 0 0.7rem;
-    font-size: 1.5rem;
+/* ============================================
+   EDUCATION SECTION — Reference Design
+   ============================================ */
+
+.edu-section {
+    padding: 0 0 2rem;
 }
 
-#Education p {
-    margin-bottom: 0.7rem;
+/* ============================================
+   ROW 1: Hero Header
+   ============================================ */
+
+.edu-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1450px;
+    margin: 0 auto 2.5rem;
+    padding: 1.5rem 24px 1.5rem;
+}
+
+.edu-hero-left {
+    display: flex;
+    flex-direction: column;
+}
+
+/* "My Journey" badge */
+.edu-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    color: var(--accent-purple-light);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    margin-bottom: 1.1rem;
+    width: fit-content;
+}
+
+/* Heading */
+.edu-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    text-align: left;
+    display: block;
+    border: none;
+}
+
+.edu-heading-accent {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.edu-subtext {
+    font-size: 0.95rem;
     color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 420px;
+}
+
+/* ---- Cap Graphic (Image wrapper) ---- */
+.edu-hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edu-cap-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edu-cap-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.35));
+    z-index: 2;
+}
+
+.cap-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.28) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: capGlowPulse 4s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes capGlowPulse {
+    0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(0.95); }
+    50%       { opacity: 0.85; transform: translate(-50%, -50%) scale(1.06); }
+}
+
+/* ============================================
+   ROW 2: Body — Timeline + Highlights
+   ============================================ */
+
+.edu-body {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 4rem;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 24px;
+    align-items: start;
+}
+
+/* ---- Timeline Card ---- */
+.edu-timeline-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.8rem;
+}
+
+.edu-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.edu-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-purple-light);
+    font-size: 0.9rem;
+}
+
+.edu-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+/* Education entries */
+.edu-entry {
+    display: grid;
+    grid-template-columns: 44px 14px 1fr;
+    gap: 0 0.8rem;
+    align-items: start;
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.edu-entry:last-child {
+    margin-bottom: 0;
+}
+
+.edu-entry-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-purple-light);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.edu-entry-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-purple-light);
+    margin-top: 17px;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(168,85,247,0.4);
+}
+
+.edu-entry-body {
+    padding-top: 0;
+}
+
+.edu-entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.edu-entry-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.edu-entry-inst {
+    font-size: 0.88rem;
+    color: var(--accent-purple-light);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.edu-entry-meta {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.edu-entry-meta span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.edu-entry-meta i {
+    font-size: 0.75rem;
+    color: var(--accent-purple-light);
+    opacity: 0.8;
+}
+
+.edu-badge-score {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-purple-light);
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Coursework row */
+.edu-coursework {
+    background: rgba(124, 58, 237, 0.06);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.coursework-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-right: 0.4rem;
+}
+
+.coursework-label i {
+    color: var(--accent-purple-light);
+    margin-right: 0.3rem;
+    font-size: 0.75rem;
+}
+
+/* ---- Academic Highlights ---- */
+.edu-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.edu-highlights-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.highlight-item:hover {
+    background: rgba(124, 58, 237, 0.07);
+    border-color: rgba(124, 58, 237, 0.25);
+}
+
+.highlight-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-purple-light);
+    font-size: 0.9rem;
+}
+
+.highlight-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.highlight-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+    .edu-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-hero-right {
+        display: none;
+    }
+
+    .edu-heading {
+        font-size: 2.2rem;
+    }
+
+    .edu-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .edu-heading {
+        font-size: 1.9rem;
+    }
+
+    .edu-entry {
+        grid-template-columns: 36px 10px 1fr;
+    }
+
+    .edu-entry-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .edu-timeline-card {
+        padding: 1.2rem;
+    }
 }

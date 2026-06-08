@@ -1,39 +1,71 @@
-// Project Detail Page JavaScript - Minimal version to avoid duplication
+// Project Detail Page JavaScript
+// Contains layout animations, accessibility triggers, and header navigation menu toggles
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Add animation to project elements when they come into view
-    const projectElements = document.querySelectorAll('.project-info > *, .project-image');
+    // -----------------------------------------------
+    // Mobile Navigation Drawer Toggle
+    // -----------------------------------------------
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
     
-    // Check if we have elements to animate
-    if (projectElements.length === 0) return;
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+    if (navToggle && mainNav) {
+        navToggle.addEventListener('click', function () {
+            mainNav.classList.toggle('open');
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             }
         });
-    }, observerOptions);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!navToggle.contains(e.target) && !mainNav.contains(e.target)) {
+                mainNav.classList.remove('open');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    }
+
+    // -----------------------------------------------
+    // Intersection Observer Animation
+    // -----------------------------------------------
+    const projectElements = document.querySelectorAll('.project-info > *, .project-image, .project-card-details, .project-header, .media-item');
     
-    projectElements.forEach(element => {
-        // Only apply animation if not already animated
-        if (!element.style.transition) {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(element);
-        }
-    });
+    if (projectElements.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.05
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        projectElements.forEach(element => {
+            if (!element.style.transition) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                observer.observe(element);
+            }
+        });
+    }
     
-    // Add keyboard support for back to top button
+    // -----------------------------------------------
+    // Keyboard Accessibility for Back to Top Button
+    // -----------------------------------------------
     const backToTopButton = document.getElementById('backToTop');
     if (backToTopButton) {
         backToTopButton.addEventListener('keydown', (event) => {

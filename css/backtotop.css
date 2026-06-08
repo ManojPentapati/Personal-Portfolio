@@ -1,22 +1,26 @@
-/* Back to Top Button */
+/* ============================================
+   BACK TO TOP BUTTON — Purple Accent
+   ============================================ */
+
 .back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 46px;
+    height: 46px;
+    background: var(--accent-purple);
     color: white;
-    border-radius: 50%;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 20px var(--accent-purple-glow);
     transition: var(--transition);
     opacity: 0;
     visibility: hidden;
     z-index: 99;
+    font-size: 1rem;
 }
 
 .back-to-top.show {
@@ -25,12 +29,26 @@
 }
 
 .back-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    background: var(--accent-purple-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px var(--accent-purple-glow);
 }
 
-/* Focus Styles for Accessibility */
-.back-to-top:focus {
-    outline: 2px solid var(--primary-color);
+.back-to-top:focus-visible {
+    outline: 2px solid var(--accent-purple-light);
     outline-offset: 2px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 576px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
 }

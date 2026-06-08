@@ -1,8 +1,12 @@
-/* Animations */
-@keyframes fadeIn {
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Fade In Up — used by Intersection Observer in JS */
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -10,26 +14,67 @@
     }
 }
 
+/* Glow Pulse — for hero image glow */
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+/* Shimmer Text — gradient text animation for hero name */
+@keyframes shimmerText {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Bounce — for scroll indicator */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Float — subtle floating for elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Section initial state for scroll animation */
 section {
-    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-section:nth-child(1) {
-    animation-delay: 0.1s;
+/* Hero doesn't need scroll animation — always visible */
+.hero-section {
+    opacity: 1;
+    transform: none;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-section:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-section:nth-child(3) {
-    animation-delay: 0.5s;
-}
-
-section:nth-child(4) {
-    animation-delay: 0.7s;
-}
-
-section:nth-child(5) {
-    animation-delay: 0.9s;
+/* Stats bar animation */
+.stats-bar {
+    animation: fadeInUp 0.8s ease 0.3s forwards;
+    opacity: 0;
 }

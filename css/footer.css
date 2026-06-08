@@ -1,149 +1,240 @@
-/* Footer */
-footer {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    color: white;
-    margin: 2rem 0;
+/* ============================================
+   FOOTER — Glassmorphic Container Design
+   ============================================ */
+
+.site-footer {
+    width: calc(100% - 48px);
+    max-width: var(--max-width);
+    margin: 3rem auto 2rem; /* Fixed top margin to keep the footer close to the content */
+    background: rgba(10, 10, 26, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-subtle);
     border-radius: 20px;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 30px var(--shadow-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* important to round the corners of inner background content */
+    flex-shrink: 0;
+}
+
+/* Three-column main area */
+.footer-main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 24px 2.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1.3fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    position: relative;
+}
+
+/* ---- Col 1: Brand ---- */
+.footer-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    margin-bottom: 0.3rem;
+}
+
+.footer-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-purple-light);
+    margin-bottom: 0.75rem;
+}
+
+.footer-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 220px;
+}
+
+/* ---- Col 2: Quick Links ---- */
+.footer-col-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 1rem;
+}
+
+.footer-links-grid ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-grid a {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+}
+
+.footer-links-grid a i {
+    font-size: 0.65rem;
+    color: var(--accent-purple-light);
+}
+
+.footer-links-grid a:hover {
+    color: var(--text-primary);
+}
+
+/* ---- Col 3: Let's Connect ---- */
+.footer-connect-col {
+    position: relative;
+}
+
+.footer-connect-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.footer-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-content {
     display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.footer-info, .footer-contact {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #fbbf24; /* Amber color for name */
-}
-
-.footer-info p {
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-social a {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-social-btn:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Decorative orbit rings */
+.footer-orbit {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.orbit-ring {
+    position: absolute;
     border-radius: 50%;
-    color: white;
-    font-size: 1.2rem;
-    transition: var(--transition);
-    text-decoration: none;
+    border: 1px solid rgba(124, 58, 237, 0.25);
 }
 
-.footer-social a:hover {
-    background: #fbbf24; /* Amber color on hover */
-    transform: translateY(-3px);
+.orbit-ring-1 {
+    width: 120px;
+    height: 120px;
+    top: 20px;
+    left: 20px;
+    animation: spinOrbit 12s linear infinite;
 }
 
-.footer-contact h4, .footer-links h4 {
-    color: #fbbf24; /* Amber color for headings */
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+.orbit-ring-2 {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+    left: 40px;
+    border-color: rgba(168, 85, 247, 0.2);
+    animation: spinOrbit 8s linear infinite reverse;
 }
 
-.footer-contact p {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.8rem;
-    opacity: 0.9;
+.orbit-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-purple-light);
+    top: 56px;
+    left: 56px;
+    box-shadow: 0 0 12px var(--accent-purple-glow);
 }
 
-.footer-contact i, .footer-links i {
-    color: #fbbf24; /* Amber color for icons */
+@keyframes spinOrbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.footer-links a:hover {
-    color: #fbbf24; /* Amber color on hover */
-    transform: translateX(5px);
-}
-
+/* ---- Bottom bar ---- */
 .footer-bottom {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.2); /* slight darkened background for bottom bar inside the glass box */
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 24px;
 }
 
 .footer-bottom p {
-    margin: 0.5rem 0;
-    opacity: 0.9;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+.footer-heart {
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
-    
-    .footer-social {
-        justify-content: center;
-    }
-    
-    .footer-links ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .footer-links li {
-        margin-bottom: 0;
+
+    .footer-connect-col {
+        grid-column: 1 / -1;
     }
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        padding: 1.5rem;
+@media (max-width: 576px) {
+    .site-footer {
+        width: calc(100% - 24px);
+        margin: 1rem auto 1rem;
     }
     
-    .footer-bottom {
-        padding: 1rem 1.5rem;
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 24px 2rem;
     }
-    
-    .footer-links ul {
-        flex-direction: column;
-        gap: 0.5rem;
+
+    .footer-connect-col {
+        grid-column: auto;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }

@@ -1,0 +1,15 @@
+# Scratch and temporary agent files
+scratch/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDE configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -5,21 +5,97 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
-        const name = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        // Get form elements
+        const nameInput = document.getElementById('userName');
+        const emailInput = document.getElementById('userEmail');
+        const subjectInput = document.getElementById('userSubject');
+        const messageInput = document.getElementById('userMessage');
+        const submitBtn = contactForm.querySelector('.form-submit-btn');
+        const replyNote = contactForm.querySelector('.form-reply-note');
+        
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput ? subjectInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
         
         // Simple validation
-        if (name && email) {
-            // In a real application, you would send this data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you ${name}! Your message has been received. I'll get back to you soon at ${email}.`);
+        if (!name || !email) {
+            alert('Please fill in all required fields (Name and Email).');
+            return;
+        }
+        
+        // Save original button content
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Set loading state
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        // Submit using FormSubmit AJAX API
+        fetch("https://formsubmit.co/ajax/srimanoj.pentapati@gmail.com", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject || "New Portfolio Message",
+                message: message
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+            // Success status
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+            
+            // Temporary note change to celebrate
+            if (replyNote) {
+                const originalNote = replyNote.innerHTML;
+                replyNote.style.color = '#4ade80';
+                replyNote.innerHTML = '<i class="fas fa-check-circle"></i> Message sent! Check your inbox to activate on first use.';
+                setTimeout(() => {
+                    replyNote.innerHTML = originalNote;
+                    replyNote.style.color = '';
+                }, 8000);
+            }
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+            }, 3000);
             
             // Reset form
             contactForm.reset();
-        } else {
-            alert('Please fill in all required fields.');
-        }
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed to Send';
+            
+            if (replyNote) {
+                const originalNote = replyNote.innerHTML;
+                replyNote.style.color = '#ef4444';
+                replyNote.innerHTML = '<i class="fas fa-exclamation-circle"></i> Submission failed. Please try again.';
+                setTimeout(() => {
+                    replyNote.innerHTML = originalNote;
+                    replyNote.style.color = '';
+                }, 5000);
+            }
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+            }, 3000);
+        });
     });
 }

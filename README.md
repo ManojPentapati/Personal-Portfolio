@@ -214,9 +214,11 @@ The portfolio uses CSS variables for consistent theming. Modify colors in `main.
 
 ### Professional Profiles
 - [LinkedIn](https://www.linkedin.com/in/manoj-pentapati-2b8b18302/)
-- [GitHub](https://github.com/your-github-username)
+- [GitHub](https://github.com/ManojPentapati)
 - [LeetCode](https://leetcode.com/u/221FA23057/)
 - [Coding Ninjas](https://www.naukri.com/code360/profile/ManojBunny)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/profile/srimanojptwfp)
+- [TakeUForward](https://takeuforward.org/profile/ManojBunny203196)
 
 ---
 
