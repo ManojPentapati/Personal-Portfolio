@@ -12,30 +12,77 @@ document.addEventListener('DOMContentLoaded', function () {
     // -----------------------------------------------
     // Core: Show only the target section, hide others
     // -----------------------------------------------
-    function showSection(hash) {
+    let isTransitioning = false;
+
+    function showSection(hash, animate) {
         if (!hash || !hash.startsWith('#')) hash = '#Hero';
 
         const target = document.querySelector(hash);
         if (!target) return;
 
-        // Hide every section
-        allSections.forEach(function (s) {
-            s.style.display = 'none';
-        });
+        // Find the currently visible section
+        const currentSection = document.querySelector('main section[style*="display: block"]') ||
+                               document.querySelector('main section.section-visible');
 
-        // Show the chosen section
-        target.style.display = 'block';
+        // If same section, skip
+        if (currentSection === target) return;
 
-        // Reset scroll position to the very top
-        window.scrollTo(0, 0);
-
-        // Update active nav link
+        // Update active nav link immediately
         allNavLinks.forEach(function (link) {
             link.classList.remove('active');
             if (link.getAttribute('href') === hash) {
                 link.classList.add('active');
             }
         });
+
+        // If no animation (first load), switch instantly
+        if (!animate || !currentSection || isTransitioning) {
+            allSections.forEach(function (s) {
+                s.style.display = 'none';
+                s.classList.remove('section-visible');
+                s.style.opacity = '0';
+                s.style.transform = 'translateY(20px)';
+            });
+            target.style.display = 'block';
+            target.classList.add('section-visible');
+            target.style.opacity = '1';
+            target.style.transform = 'translateY(0)';
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        // Animated transition
+        isTransitioning = true;
+
+        // Fade out current section
+        currentSection.style.opacity = '0';
+        currentSection.style.transform = 'translateY(-15px)';
+
+        setTimeout(function () {
+            // Hide old, show new
+            allSections.forEach(function (s) {
+                s.style.display = 'none';
+                s.classList.remove('section-visible');
+            });
+
+            target.style.display = 'block';
+            target.classList.add('section-visible');
+            target.style.opacity = '0';
+            target.style.transform = 'translateY(20px)';
+
+            window.scrollTo(0, 0);
+
+            // Fade in new section (use rAF to ensure style is applied first)
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    target.style.opacity = '1';
+                    target.style.transform = 'translateY(0)';
+                    setTimeout(function () {
+                        isTransitioning = false;
+                    }, 300);
+                });
+            });
+        }, 150);
     }
 
     // -----------------------------------------------
@@ -48,8 +95,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             e.preventDefault();
 
-            // Switch section
-            showSection(href);
+            // Switch section (with animation)
+            showSection(href, true);
 
             // Update browser URL without reloading
             history.pushState(null, '', href);
@@ -70,13 +117,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle browser back / forward buttons
     // -----------------------------------------------
     window.addEventListener('popstate', function () {
-        showSection(window.location.hash || '#Hero');
+        showSection(window.location.hash || '#Hero', false);
     });
 
     // -----------------------------------------------
     // On first load, show the section from the URL hash
     // -----------------------------------------------
-    showSection(window.location.hash || '#Hero');
+    showSection(window.location.hash || '#Hero', false);
 
     // -----------------------------------------------
     // Mobile hamburger toggle

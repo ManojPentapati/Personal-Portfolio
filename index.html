@@ -10,6 +10,7 @@
         content="Manoj Pentapati, Software Engineer, Data Science, Portfolio, Java, Python, Web Developer">
     <meta name="author" content="Manoj Pentapati">
     <title>Manoj Pentapati — Software Engineer Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <!-- Preload critical assets -->
     <link rel="preload" href="assets/Manoj-Image-removebg-preview.png" as="image">
@@ -29,7 +30,7 @@
     <link rel="stylesheet" href="css/footer.css?v=1.1">
     <link rel="stylesheet" href="css/modal.css?v=1.1">
     <link rel="stylesheet" href="css/backtotop.css?v=1.1">
-    <link rel="stylesheet" href="css/animations.css?v=1.1">
+    <link rel="stylesheet" href="css/animations.css?v=1.2">
     <link rel="stylesheet" href="css/print.css" media="print">
 
     <!-- Fonts -->
@@ -44,6 +45,16 @@
 </head>
 
 <body>
+
+    <!-- Page Preloader -->
+    <div id="pagePreloader" class="page-preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">M<span>P</span></span>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- ========================================
          NAVIGATION BAR
@@ -1314,6 +1325,21 @@
     <script src="js/interactions.js"></script>
     <script src="js/skills.js"></script>
     <script src="js/modal.js"></script>
+
+    <!-- Preloader Dismiss -->
+    <script>
+        window.addEventListener('load', function () {
+            var preloader = document.getElementById('pagePreloader');
+            if (preloader) {
+                setTimeout(function () {
+                    preloader.classList.add('hidden');
+                    setTimeout(function () {
+                        preloader.remove();
+                    }, 500);
+                }, 300);
+            }
+        });
+    </script>
 </body>
 
 </html>
