@@ -87,4 +87,22 @@
     .about-heading {
         font-size: 2rem;
     }
+
+    .about-wrapper {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-heading {
+        font-size: 1.7rem;
+    }
+
+    .about-bio {
+        font-size: 0.95rem;
+    }
+
+    .about-section {
+        padding: 2rem 0 2rem;
+    }
 }

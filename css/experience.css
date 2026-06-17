@@ -231,11 +231,22 @@
     .exp-divider {
         display: none;
     }
+
+    .exp-header,
+    .timeline-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .exp-header h1 {
+        font-size: 2.4rem;
+    }
 }
 
 @media (max-width: 576px) {
     .timeline-container {
         padding-left: 1.5rem;
+        padding-right: 12px;
     }
     
     .timeline-dot {
@@ -243,11 +254,34 @@
     }
     
     .exp-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
     
     .exp-badge {
         position: static;
         margin-top: 0.5rem;
+    }
+
+    .exp-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .exp-role {
+        font-size: 1.1rem;
+    }
+
+    .exp-org {
+        font-size: 0.95rem;
+    }
+
+    .exp-icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+
+    .exp-bullets li {
+        font-size: 0.88rem;
+        padding-left: 1.4rem;
     }
 }

@@ -275,6 +275,12 @@
     .achieve-grid {
         padding: 0;
     }
+
+    .achieve-header,
+    .achieve-grid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -289,5 +295,27 @@
     
     .achieve-card.highlight {
         padding: 1.5rem;
+    }
+
+    .achieve-header,
+    .achieve-grid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .achieve-desc {
+        font-size: 0.85rem;
+    }
+
+    .achieve-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .leetcode-showcase-panel {
+        padding: 1.5rem;
+    }
+
+    .leetcode-panel-title {
+        font-size: 1.1rem;
     }
 }

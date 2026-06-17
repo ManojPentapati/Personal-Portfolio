@@ -629,6 +629,17 @@
     .cert-container, .cert-layout {
         padding: 0;
     }
+
+    .cert-header-container,
+    .cert-layout {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .cert-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -649,6 +660,32 @@
     .overview-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .cert-header-container,
+    .cert-layout {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .cert-card-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .cert-meta span {
+        font-size: 0.72rem;
+    }
+
+    .cert-footer-banner {
+        margin: 0 12px 2rem;
+    }
+
+    .banner-text h3 {
+        font-size: 1rem;
+    }
+
+    .banner-text p {
+        font-size: 0.8rem;
     }
 }
 

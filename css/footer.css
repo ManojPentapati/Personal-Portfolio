@@ -227,7 +227,7 @@
     .footer-main {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-        padding: 2.5rem 24px 2rem;
+        padding: 2.5rem 20px 2rem;
     }
 
     .footer-connect-col {
@@ -236,5 +236,41 @@
 
     .footer-links-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+
+    .footer-social-icons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 380px) {
+    .site-footer {
+        width: calc(100% - 16px);
+        border-radius: 14px;
+    }
+
+    .footer-main {
+        padding: 2rem 16px 1.5rem;
+        gap: 2rem;
+    }
+
+    .footer-name {
+        font-size: 1.1rem;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links-grid a {
+        font-size: 0.82rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.78rem;
     }
 }

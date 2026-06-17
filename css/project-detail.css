@@ -487,3 +487,39 @@ textarea:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 576px) {
+    .project-title {
+        font-size: 1.8rem !important;
+    }
+
+    .project-subtitle {
+        font-size: 1rem;
+    }
+
+    .project-card-details {
+        padding: 1.25rem;
+    }
+
+    .project-card-details h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-card-details p {
+        font-size: 0.92rem;
+    }
+
+    .tech-item {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.85rem;
+    }
+
+    .project-video,
+    .project-image {
+        height: 200px;
+    }
+
+    .feature-card {
+        padding: 1.1rem;
+    }
+}

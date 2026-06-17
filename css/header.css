@@ -226,6 +226,7 @@ nav a.active::after {
         opacity: 0;
         transition: var(--transition);
         pointer-events: none;
+        z-index: 999;
     }
 
     nav.open {
@@ -245,5 +246,23 @@ nav a.active::after {
         width: 100%;
         justify-content: center;
         margin-top: 0.5rem;
+    }
+
+    .nav-logo {
+        transform: none;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 0 0.75rem;
+    }
+
+    .nav-logo-text {
+        font-size: 1.3rem;
+    }
+
+    .nav-logo-subtext {
+        font-size: 0.55rem;
     }
 }

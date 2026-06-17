@@ -361,6 +361,12 @@
     .edu-body {
         grid-template-columns: 1fr;
     }
+
+    .edu-hero,
+    .edu-body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -380,5 +386,32 @@
 
     .edu-timeline-card {
         padding: 1.2rem;
+    }
+
+    .edu-hero,
+    .edu-body {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .edu-subtext {
+        font-size: 0.88rem;
+    }
+
+    .edu-coursework {
+        font-size: 0.78rem;
+        word-break: break-word;
+    }
+
+    .highlight-item {
+        padding: 0.75rem;
+    }
+
+    .highlight-name {
+        font-size: 0.85rem;
+    }
+
+    .highlight-desc {
+        font-size: 0.78rem;
     }
 }

@@ -319,6 +319,11 @@
     .contact-heading {
         font-size: 2.2rem;
     }
+
+    .contact-layout {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -331,11 +336,30 @@
     }
 
     .contact-form-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
 
     .form-submit-row {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .contact-layout {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .contact-subtext {
+        font-size: 0.88rem;
+    }
+
+    .form-submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ci-value {
+        font-size: 0.82rem;
+        word-break: break-word;
     }
 }
