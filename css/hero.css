@@ -253,6 +253,29 @@
     box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
 }
 
+/* Mobile-only Download CV Button (hidden on desktop) */
+.hero-download-cv {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.8rem;
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-purple-light) 100%);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px var(--accent-purple-glow);
+    margin-top: 1rem;
+}
+
+.hero-download-cv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px var(--accent-purple-glow);
+}
+
 /* ============================================
    STATS BAR — Right-aligned
    ============================================ */
@@ -436,6 +459,12 @@
 
     .hero-social {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .hero-download-cv {
+        display: inline-flex;
     }
 
     .stats-bar {

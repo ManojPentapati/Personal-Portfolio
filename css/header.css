@@ -243,9 +243,7 @@ nav a.active::after {
     }
 
     .nav-cta {
-        width: 100%;
-        justify-content: center;
-        margin-top: 0.5rem;
+        display: none;
     }
 
     .nav-logo {
