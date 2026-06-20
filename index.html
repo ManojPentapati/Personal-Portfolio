@@ -1368,7 +1368,8 @@
 
     <!-- Auto-update Copyright Year -->
     <script>
-        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+        var yearEl = document.getElementById('copyrightYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
 
 </body>
