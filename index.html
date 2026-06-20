@@ -21,8 +21,6 @@
     <title>Manoj Pentapati — Software Engineer Portfolio</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#0a0a1a">
 
     <!-- Open Graph / Facebook -->
@@ -1494,18 +1492,7 @@
         if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
 
-    <!-- Register PWA Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful');
-                }, err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-    </script>
+
 
 </body>
 
