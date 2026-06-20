@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Switch section (with animation)
             showSection(href, true);
 
-            // Update browser URL without reloading
-            history.pushState(null, '', href);
+            // Update browser URL without reloading (keep it clean, no hash)
+            history.replaceState(null, '', window.location.pathname + window.location.search);
 
             // Close mobile menu if open
             if (mainNav && mainNav.classList.contains('open')) {
