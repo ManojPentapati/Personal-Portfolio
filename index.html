@@ -21,6 +21,10 @@
     <title>Manoj Pentapati — Software Engineer Portfolio</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a1a">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://manojpentapati.unaux.com/">
@@ -90,6 +94,11 @@
                 <span class="nav-logo-text">M<span>P</span></span>
                 <span class="nav-logo-subtext">Manoj Pentapati</span>
             </a>
+
+            <!-- Dark/Light Theme Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
@@ -1370,6 +1379,19 @@
     <script>
         var yearEl = document.getElementById('copyrightYear');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Register PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful');
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
 
 </body>

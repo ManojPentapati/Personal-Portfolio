@@ -10,7 +10,7 @@ header {
     width: calc(100% - 48px);
     max-width: calc(var(--max-width) + 40px); /* Increased by 40px for more horizontal breathing room */
     height: var(--nav-height);
-    background: rgba(10, 10, 26, 0.85);
+    background: var(--bg-primary);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--border-subtle);
@@ -154,15 +154,36 @@ nav a.active::after {
     font-size: 0.85rem;
 }
 
-/* Mobile hamburger toggle */
+/* Theme toggle is always visible */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    margin-right: 15px;
+    margin-left: auto;
+}
+
+/* Mobile hamburger toggle hidden on desktop */
 .nav-toggle {
     display: none;
-    background: none;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
     border: none;
     color: var(--text-primary);
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.25rem;
+    transition: var(--transition-fast);
+}
+
+.nav-toggle:hover, .theme-toggle:hover {
+    color: var(--accent-purple);
 }
 
 /* Spacer to push content below fixed navbar */
@@ -216,7 +237,7 @@ nav a.active::after {
         top: var(--nav-height);
         left: 0;
         width: 100%;
-        background: rgba(10, 10, 26, 0.97);
+        background: var(--bg-primary);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 1rem;
