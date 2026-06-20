@@ -1,225 +1,115 @@
-# Manoj Pentapati - Professional Portfolio
+<div align="center">
+  <h1>🚀 Manoj Pentapati | Professional Portfolio</h1>
+  <p>
+    <b>Software Engineer & Data Science Enthusiast</b>
+  </p>
+  <p>
+    <a href="https://personal-portfolio-tan-ten.vercel.app/"><strong>View Live Demo »</strong></a>
+  </p>
+  <p>
+    <a href="https://www.linkedin.com/in/manoj-pentapati-2b8b18302/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+    <a href="https://github.com/ManojPentapati"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    <a href="https://leetcode.com/u/221FA23057/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" alt="LeetCode" /></a>
+  </p>
+</div>
 
-Welcome to my personal portfolio repository! This project showcases my skills, projects, and professional journey as a Software Engineering student. The portfolio is designed to be responsive, interactive, and visually appealing, demonstrating my proficiency in modern web development technologies.
+<br />
 
-## 🌐 Live Demo
+Welcome to my personal portfolio repository! This project serves as a comprehensive showcase of my software engineering journey, technical projects, and academic achievements. Built with a focus on modern web aesthetics, performance, and user experience.
 
-[View Portfolio](https://personal-portfolio-tan-ten.vercel.app/) 
+## ✨ Key Features
 
-## 📋 Table of Contents
+- **🎨 Modern Glassmorphic UI**: Sleek, transparent UI elements with vibrant gradients and subtle glow effects.
+- **⚡ Lightning Fast Transitions**: Smooth section fading and seamless navigation without jarring page reloads.
+- **📱 Fully Responsive**: Flawless experience across desktop, tablet, and mobile devices.
+- **🎬 Integrated Media**: Project showcases featuring embedded YouTube demonstration videos and high-res screenshots.
+- **🚀 Custom Preloader**: A sleek loading animation that ensures all assets are ready before the user sees the site.
+- **📄 Resume Integration**: View, print, or download my resume directly from the hero section.
+- **✉️ Working Contact Form**: Integrated with FormSubmit for reliable, backend-free messaging.
 
-- [About](#about)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Project Highlights](#project-highlights)
-- [Project Structure](#project-structure)
-- [Setup Instructions](#setup-instructions)
-- [Contact](#contact)
+## 🛠️ Tech Stack
 
-## 🙋 About
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+</p>
 
-I'm Manoj Pentapati, a passionate Software Engineering student at Vignan's Foundation for Science, Technology and Research with a CGPA of 8.0. This portfolio represents my journey in software development, showcasing my technical skills, academic achievements, and hands-on projects.
+- **Architecture**: Vanilla JS Single Page Application (SPA) style routing
+- **Typography**: Google Fonts (Poppins & Inter)
+- **Icons**: Font Awesome 6 & Custom SVGs
+- **Deployment**: Vercel / GitHub Pages
 
-The portfolio demonstrates my expertise in:
-- Frontend web development (HTML5, CSS3, JavaScript)
-- Responsive design and UI/UX principles
-- Version control with Git
-- Project documentation and presentation
+## 📂 Project Structure
 
-## ✨ Features
+<details>
+<summary>Click to expand folder structure</summary>
 
-### Responsive Design
-- Fully responsive layout that works on mobile, tablet, and desktop devices
-- Adaptive components that adjust to different screen sizes
-
-### Interactive Elements
-- Smooth scrolling navigation between sections
-- Animated transitions and hover effects
-- Interactive project cards with preview overlays
-- Back-to-top button for improved navigation
-
-### Professional Sections
-- **Hero Section**: Engaging introduction with call-to-action buttons
-- **About Me**: Personal introduction and professional background
-- **Education**: Academic qualifications and achievements
-- **Skills**: Comprehensive breakdown of technical abilities
-- **Projects**: Detailed showcase of key projects with live demos
-- **Contact**: Direct communication channels
-
-### Resume Integration
-- Modal-based resume viewer
-- Direct PDF download functionality
-- Printable version optimized for physical copies
-
-### Modern UI Components
-- Gradient-based color scheme with purple/blue accents
-- Card-based layouts for content organization
-- Consistent iconography using Font Awesome
-- Custom SVG icons for branding elements
-
-## 💻 Technologies Used
-
-### Frontend
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Flexbox, Grid, Animations, and Custom Properties
-- **JavaScript (ES6+)**: DOM manipulation and interactivity
-- **Font Awesome**: Icon library for visual elements
-
-### Tools & Infrastructure
-- **Git**: Version control and collaboration
-- **GitHub**: Repository hosting and deployment
-- **VS Code**: Primary development environment
-- **Chrome DevTools**: Debugging and optimization
-
-### Design & UX
-- **Google Fonts**: Custom typography (Poppins)
-- **Responsive Design**: Mobile-first approach
-- **Accessibility**: ARIA labels and semantic HTML
-
-## 🚀 Project Highlights
-
-### 1. Object Tracking System
-A multipurpose computer vision application that detects and tracks multiple objects in video footage using YOLOv5 and SORT algorithms. Features include:
-- Real-time multi-object tracking with unique ID assignment
-- Enhanced popup window for detailed object inspection
-- Support for multi-digit ID selection with confirmation system
-- Optimized performance for CPU environments
-
-### 2. Pizza Sales Analysis (MySQL)
-Comprehensive data analysis project using MySQL to derive insights from pizza sales data:
-- Database design and querying
-- Data visualization and reporting
-- Business intelligence insights
-- Performance optimization techniques
-
-### 3. Product Search Engine
-Web application that enables users to search for products across multiple e-commerce platforms simultaneously:
-- Cross-platform product comparison
-- Automatic image loading via Unsplash API
-- Misspelling correction for improved search results
-- Link management and export functionality
-
-## 📁 Project Structure
-
-```
+```text
 portfolio/
 ├── index.html                 # Main portfolio page
-├── assets/                    # Media and document assets
-│   ├── Passport pic2.jpg      # Profile picture
-│   ├── Manoj-Resume.pdf       # Resume document
-│   ├── vscode.svg             # VS Code icon
-│   └── Project screenshots and videos
-├── css/                       # Stylesheets
-│   ├── main.css               # Global styles and variables
-│   ├── header.css             # Header styles
-│   ├── hero.css               # Hero section styles
-│   ├── about.css              # About section styles
-│   ├── education.css          # Education section styles
-│   ├── skills.css             # Skills section styles
-│   ├── projects.css           # Projects section styles
-│   ├── contact.css            # Contact section styles
-│   ├── footer.css             # Footer styles
-│   ├── modal.css              # Modal overlay styles
-│   ├── backtotop.css          # Back to top button styles
-│   ├── animations.css         # Animation styles
-│   └── print.css              # Print optimization
-├── js/                        # JavaScript files
-│   ├── backtotop.js           # Back to top button functionality
-│   ├── hero.js                # Hero section interactions
-│   ├── navigation.js          # Navigation and smooth scrolling
-│   ├── contact.js             # Contact form handling
-│   ├── animations.js          # Section animations
-│   ├── interactions.js        # UI interactions
-│   └── modal.js               # Resume modal functionality
-└── html/                      # HTML section files
-    ├── project-object_tracker_gui.html    # Object Tracking System project details
-    ├── project-pizza-sales-Analytics.html # Pizza Sales Analysis project details
-    └── project-product-search engine.html # Product Search Engine project details
+├── assets/                    # Media, images, and resume PDF
+├── css/                       
+│   ├── main.css               # Global CSS variables and base styles
+│   ├── hero.css               # Hero section animations and layout
+│   ├── animations.css         # Page preloader and keyframes
+│   └── ...                    # Modular stylesheets for each section
+├── js/                        
+│   ├── navigation.js          # SPA-like smooth transitions & clean URLs
+│   ├── contact.js             # FormSubmit integration
+│   └── ...                    # Modular JS for UI interactions
+└── html/                      
+    └── project-*.html         # Dedicated detail pages for each project
 ```
 
-## ⚙️ Setup Instructions
+</details>
 
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A code editor (VS Code recommended)
-- Git (for version control)
+## 🚀 Featured Projects
 
-### Local Development
-1. Clone the repository:
+### 1. Object Tracking System
+A multipurpose computer vision application utilizing YOLOv5 and SORT algorithms to detect and track multiple objects in video footage. Features real-time ID assignment and an intuitive tracking GUI.
+
+### 2. Pizza Sales Analysis
+A comprehensive data analysis project using MySQL to derive business insights from complex sales data. Features advanced database queries and BI reporting.
+
+### 3. Product Search Engine
+A web application enabling users to simultaneously search and compare products across multiple e-commerce platforms, complete with auto-correction and image fetching APIs.
+
+## 💻 Setup & Local Development
+
+Want to run this portfolio locally? 
+
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ManojPentapati/Personal-Portfolio
+   git clone https://github.com/ManojPentapati/Personal-Portfolio.git
    ```
 
-2. Navigate to the project directory:
+2. **Navigate to the directory:**
    ```bash
-   cd portfolio
+   cd Personal-Portfolio
    ```
 
-3. Open `index.html` in your preferred browser or use a local server:
+3. **Run a local server** (to avoid CORS issues with modules/assets):
    ```bash
-   # Using Python's built-in server
+   # Using Python
    python -m http.server 8000
    
-   # Using Node.js (if http-server is installed)
+   # Or using Node.js (requires http-server)
    npx http-server
    ```
 
-### Deployment
-The portfolio can be deployed using various platforms:
-- **GitHub Pages**: Enable in repository settings
-- **Vercel**: Import repository for automatic deployments
+4. **View in browser:** Open `http://localhost:8000`
 
-## 🎨 Customization
+## 📞 Get In Touch
 
-### Personal Information
-Update your personal details in `index.html`:
-- Name and title in the header
-- About section content
-- Education details
-- Contact information
-- Social media links
+I am currently open to software engineering opportunities and collaborations!
 
-### Projects
-Add or modify projects by:
-1. Creating new HTML files in the `html/` directory
-2. Adding project assets to the `assets/` folder
-3. Updating the projects section in `index.html`
-4. Ensuring consistent styling with existing projects
-
-### Styling
-Modify the appearance through CSS files in the `css/` directory:
-- `main.css`: Global variables and base styles
-- Section-specific stylesheets for targeted changes
-- `print.css`: Adjustments for printed versions
-
-### Colors
-The portfolio uses CSS variables for consistent theming. Modify colors in `main.css`:
-```css
-:root {
-  --primary-color: #6a11cb;
-  --secondary-color: #2575fc;
-  --accent-color: #ff6b6b;
-  --background-light: #f8f9fa;
-  --text-dark: #333;
-  --text-light: #666;
-}
-```
-
-## 📞 Contact
-
-**Manoj Pentapati**
-- Email: srimanoj.pentapati@gmail.com
-- Phone: +91-9550250484
-- Location: Kapileswarapuram, Andhra Pradesh, India
-
-### Professional Profiles
-- [LinkedIn](https://www.linkedin.com/in/manoj-pentapati-2b8b18302/)
-- [GitHub](https://github.com/ManojPentapati)
-- [LeetCode](https://leetcode.com/u/221FA23057/)
-- [Coding Ninjas](https://www.naukri.com/code360/profile/ManojBunny)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/profile/srimanojptwfp)
-- [TakeUForward](https://takeuforward.org/profile/ManojBunny203196)
+- **Email**: srimanoj.pentapati@gmail.com
+- **Phone**: +91-9550250484
+- **Profiles**: [LinkedIn](https://www.linkedin.com/in/manoj-pentapati-2b8b18302/) | [TakeUForward](https://takeuforward.org/profile/ManojBunny203196) | [Coding Ninjas](https://www.naukri.com/code360/profile/ManojBunny)
 
 ---
 
-Developed with ❤️ by [Manoj Pentapati](https://www.linkedin.com/in/manoj-pentapati-2b8b18302/)
+<div align="center">
+  <i>Designed and built with ❤️ by Manoj Pentapati</i>
+</div>
