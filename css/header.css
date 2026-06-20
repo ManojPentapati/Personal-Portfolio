@@ -154,21 +154,6 @@ nav a.active::after {
     font-size: 0.85rem;
 }
 
-/* Theme toggle is always visible */
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    margin-right: 15px;
-    margin-left: auto;
-}
-
 /* Mobile hamburger toggle hidden on desktop */
 .nav-toggle {
     display: none;
@@ -182,7 +167,7 @@ nav a.active::after {
     transition: var(--transition-fast);
 }
 
-.nav-toggle:hover, .theme-toggle:hover {
+.nav-toggle:hover {
     color: var(--accent-purple);
 }
 
