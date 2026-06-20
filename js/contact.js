@@ -32,14 +32,15 @@ if (contactForm) {
         submitBtn.style.opacity = '0.7';
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         
-        // Submit using FormSubmit AJAX API
-        fetch("https://formsubmit.co/ajax/srimanoj.pentapati@gmail.com", {
+        // Submit using Web3Forms API
+        fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
             body: JSON.stringify({
+                access_key: "0defa3b6-ec3d-4142-8c5b-595d30d96a0a", // Web3Forms Access Key
                 name: name,
                 email: email,
                 subject: subject || "New Portfolio Message",
