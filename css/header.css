@@ -22,7 +22,7 @@ header {
     padding: 0 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: var(--transition);
-    font-family: 'Amazon Ember', Arial, sans-serif; /* Applied Amazon font to header */
+    font-family: var(--font-heading); /* Uses Poppins from Google Fonts */
 }
 
 /* Inner wrapper to constrain to max-width */

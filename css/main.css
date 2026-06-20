@@ -1,24 +1,7 @@
 /* ============================================
-   AMAZON EMBER FONT IMPORT
+   FONT SETUP — Uses Google Fonts (Inter + Poppins)
+   Loaded via <link> in index.html
    ============================================ */
-@font-face {
-    font-family: 'Amazon Ember';
-    src: url('https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rg-94073d74c055653db3c6ff090333d02636be62b7._V2_.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Amazon Ember';
-    src: url('https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_md-0761e27144e5900a6e0176dfde1d06e2cf0ee8f0._V2_.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Amazon Ember';
-    src: url('https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bd-0e428cf129486c90535e6ca260db83e1c6684786._V2_.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
 
 /* ============================================
    DESIGN SYSTEM — Dark Navy + Purple Accent
@@ -67,8 +50,8 @@
     --transition-slow: all 0.5s ease;
 
     /* Typography */
-    --font-body: 'Amazon Ember', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
-    --font-heading: 'Amazon Ember', 'Poppins', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+    --font-heading: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
 
     /* Layout */
     --max-width: 1200px;
