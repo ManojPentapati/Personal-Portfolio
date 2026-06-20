@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Find the currently visible section
         const currentSection = document.querySelector('main section[style*="display: block"]') ||
-                               document.querySelector('main section.section-visible');
+            document.querySelector('main section.section-visible');
 
         // If same section, skip
         if (currentSection === target) return;
@@ -169,10 +169,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // -----------------------------------------------
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    
+
     // Check for saved user preference, if any, on load of the website
     const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    
+
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
         if (currentTheme === 'light') {
@@ -187,12 +187,12 @@ document.addEventListener('DOMContentLoaded', function () {
             themeIcon.classList.add('fa-moon');
         }
     }
-    
+
     if (themeToggle) {
-        themeToggle.addEventListener('click', function(e) {
+        themeToggle.addEventListener('click', function (e) {
             e.preventDefault();
             let theme = document.documentElement.getAttribute('data-theme');
-            
+
             if (theme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
