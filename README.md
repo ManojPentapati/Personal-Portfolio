@@ -4,7 +4,7 @@
     <b>Software Engineer & Data Science Enthusiast</b>
   </p>
   <p>
-    <a href="https://personal-portfolio-tan-ten.vercel.app/"><strong>View Live Demo »</strong></a>
+    <a href="https://manojpentapati.unaux.com/"><strong>View Live Demo »</strong></a>
   </p>
   <p>
     <a href="https://www.linkedin.com/in/manoj-pentapati-2b8b18302/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
