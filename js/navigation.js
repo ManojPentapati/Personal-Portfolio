@@ -99,7 +99,11 @@ document.addEventListener('DOMContentLoaded', function () {
             showSection(href, true);
 
             // Update browser URL without reloading (keep it clean, no hash)
-            history.replaceState(null, '', window.location.pathname + window.location.search);
+            try {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            } catch (err) {
+                console.warn('History API not supported or blocked:', err);
+            }
 
             // Close mobile menu if open
             if (mainNav && mainNav.classList.contains('open')) {
@@ -128,7 +132,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // If the page was loaded with a hash (e.g., returning from a project page),
     // clean the URL immediately so the hash doesn't linger.
     if (window.location.hash) {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
+        try {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+        } catch (err) {
+            console.warn('History API not supported or blocked:', err);
+        }
     }
 
     // -----------------------------------------------
