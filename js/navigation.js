@@ -125,6 +125,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // -----------------------------------------------
     showSection(window.location.hash || '#Hero', false);
 
+    // If the page was loaded with a hash (e.g., returning from a project page),
+    // clean the URL immediately so the hash doesn't linger.
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
     // -----------------------------------------------
     // Mobile hamburger toggle
     // -----------------------------------------------
