@@ -50,8 +50,8 @@
     --transition-slow: all 0.5s ease;
 
     /* Typography */
-    --font-body: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
-    --font-heading: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
+    --font-body: 'Amazon Ember', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+    --font-heading: 'Amazon Ember', 'Poppins', 'Inter', 'Segoe UI', sans-serif;
 
     /* Layout */
     --max-width: 1200px;
@@ -168,13 +168,13 @@ textarea:focus-visible {
 
 /* Selection */
 ::selection {
-    background: var(--accent-purple);
-    color: white;
+    background: rgba(124, 58, 237, 0.3);
+    color: #e2e8f0;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
