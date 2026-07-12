@@ -73,25 +73,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
     }
 
-    // Try fetching both APIs in parallel
-    Promise.all([
-        fetch(profileApi).then(res => { if (!res.ok) throw new Error(); return res.json(); }),
-        fetch(calendarApi).then(res => { if (!res.ok) throw new Error(); return res.json(); })
-    ])
-    .then(([profileData, calendarData]) => {
-        if (profileData && typeof profileData.totalSolved !== 'undefined') {
-            // Combine both datasets
-            const combinedData = {
-                ...profileData,
-                streak: (calendarData && typeof calendarData.streak !== 'undefined') ? calendarData.streak : fallbackData.streak
-            };
-            updateStats(combinedData);
-        } else {
-            throw new Error('Invalid data schema');
-        }
-    })
-    .catch(err => {
-        console.warn('LeetCode APIs failed or rate-limited, loading fallback metrics:', err);
-        updateStats(fallbackData);
-    });
+    // Initialize with fallback first so that the user immediately sees data
+    // and doesn't get stuck on empty dashboards if APIs take time or fail
+    updateStats(fallbackData);
+
+    // Fetch profile stats
+    fetch(profileApi)
+        .then(res => {
+            if (!res.ok) throw new Error('Profile API response error');
+            return res.json();
+        })
+        .then(profileData => {
+            if (profileData && typeof profileData.totalSolved !== 'undefined') {
+                // Merge loaded profile stats with current state (which has fallback streak)
+                fallbackData.totalSolved = profileData.totalSolved;
+                fallbackData.totalQuestions = profileData.totalQuestions;
+                fallbackData.easySolved = profileData.easySolved;
+                fallbackData.totalEasy = profileData.totalEasy;
+                fallbackData.mediumSolved = profileData.mediumSolved;
+                fallbackData.totalMedium = profileData.totalMedium;
+                fallbackData.hardSolved = profileData.hardSolved;
+                fallbackData.totalHard = profileData.totalHard;
+                fallbackData.ranking = profileData.ranking;
+                fallbackData.reputation = profileData.reputation;
+                
+                updateStats(fallbackData);
+            }
+        })
+        .catch(err => console.warn('LeetCode profile API failed, using cached values:', err));
+
+    // Fetch calendar stats (streak)
+    fetch(calendarApi)
+        .then(res => {
+            if (!res.ok) throw new Error('Calendar API response error');
+            return res.json();
+        })
+        .then(calendarData => {
+            if (calendarData && typeof calendarData.streak !== 'undefined') {
+                fallbackData.streak = calendarData.streak;
+                updateStats(fallbackData);
+            }
+        })
+        .catch(err => console.warn('LeetCode calendar API failed, using cached values:', err));
 });
