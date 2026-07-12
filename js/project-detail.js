@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
             lightbox.id = 'imageLightbox';
             lightbox.className = 'image-lightbox-modal';
             lightbox.innerHTML = `
-                <button class="image-lightbox-close" id="closeLightbox" aria-label="Close image popup">&times;</button>
+                <button class="image-lightbox-close" id="closeLightbox" aria-label="Close image popup"><i class="fas fa-compress"></i></button>
                 <img class="image-lightbox-content" id="lightboxImg" src="" alt="Enlarged screenshot">
                 <div class="image-lightbox-caption" id="lightboxCaption"></div>
             `;
@@ -127,6 +127,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         projectImages.forEach(image => {
+            // Append floating enlarge button to the parent wrapper (.media-item)
+            const mediaItem = image.closest('.media-item');
+            if (mediaItem) {
+                // Ensure relative position is active
+                mediaItem.style.position = 'relative';
+                
+                const enlargeBtn = document.createElement('div');
+                enlargeBtn.className = 'enlarge-btn-indicator';
+                enlargeBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                enlargeBtn.setAttribute('title', 'Click to enlarge');
+                mediaItem.appendChild(enlargeBtn);
+                
+                enlargeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Stop propagation to prevent card detail clicks
+                    image.click(); // Trigger click on image
+                });
+            }
+
             image.addEventListener('click', () => {
                 const img = lightbox.querySelector('#lightboxImg');
                 const caption = lightbox.querySelector('#lightboxCaption');

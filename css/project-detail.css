@@ -97,6 +97,75 @@ section {
     transition: var(--transition);
 }
 
+.image-lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    transition: var(--transition-fast);
+    cursor: pointer;
+    z-index: 1200;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.image-lightbox-close:hover {
+    color: var(--accent-purple-light);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Floating Enlarge Button Indicator */
+.enlarge-btn-indicator {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(10, 10, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: var(--transition-fast);
+    opacity: 0.7;
+    z-index: 5;
+}
+
+.media-item:hover .enlarge-btn-indicator {
+    opacity: 1;
+    background: var(--accent-purple);
+    border-color: var(--accent-purple-light);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .image-lightbox-close {
+        top: 15px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .image-lightbox-content {
+        max-width: 95%;
+    }
+}
+
 .media-item:hover {
     border-color: rgba(124, 58, 237, 0.4);
     box-shadow: var(--shadow-card-hover);
@@ -581,28 +650,67 @@ textarea:focus-visible {
 
 .image-lightbox-close {
     position: absolute;
-    top: 20px;
+    top: 25px;
     right: 35px;
     color: var(--text-primary);
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     transition: var(--transition-fast);
     cursor: pointer;
     z-index: 1200;
-    background: none;
-    border: none;
-    padding: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
 }
 
 .image-lightbox-close:hover {
     color: var(--accent-purple-light);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
+}
+
+/* Floating Enlarge Button Indicator */
+.enlarge-btn-indicator {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(10, 10, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: var(--transition-fast);
+    opacity: 0.7;
+    z-index: 5;
+}
+
+.media-item:hover .enlarge-btn-indicator {
+    opacity: 1;
+    background: var(--accent-purple);
+    border-color: var(--accent-purple-light);
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
     .image-lightbox-close {
         top: 15px;
         right: 20px;
-        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
     .image-lightbox-content {
         max-width: 95%;
