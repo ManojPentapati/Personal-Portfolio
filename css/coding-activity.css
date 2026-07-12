@@ -731,6 +731,21 @@
     display: block;
 }
 
+/* Special rule to fit smaller heatmaps without scroll */
+.heatmap-image-wrapper.fit-heatmap {
+    overflow-x: hidden;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+.heatmap-image-wrapper.fit-heatmap img {
+    min-width: auto;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .profiles-grid {
