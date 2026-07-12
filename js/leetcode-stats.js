@@ -16,8 +16,60 @@ document.addEventListener('DOMContentLoaded', function() {
         ranking: 355340,
         contributionPoint: 836,
         reputation: 72,
-        streak: 107
+        maxStreak: 107,
+        activeStreak: 11
     };
+
+    function calculateCurrentStreak(submissionCalendar) {
+        if (!submissionCalendar) return fallbackData.activeStreak;
+        
+        let calendar;
+        try {
+            calendar = typeof submissionCalendar === 'string' ? JSON.parse(submissionCalendar) : submissionCalendar;
+        } catch (e) {
+            return fallbackData.activeStreak;
+        }
+        
+        // Convert all keys to date strings (in UTC to keep consistency)
+        const submittedDays = new Set();
+        for (const timestamp in calendar) {
+            const date = new Date(parseInt(timestamp) * 1000);
+            const dateStr = date.toISOString().split('T')[0];
+            submittedDays.add(dateStr);
+        }
+        
+        let currentStreak = 0;
+        const today = new Date();
+        
+        // Normalize today and yesterday to UTC date strings
+        const todayStr = today.toISOString().split('T')[0];
+        
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toISOString().split('T')[0];
+        
+        // If no submission today and no submission yesterday, the streak is broken (0)
+        if (!submittedDays.has(todayStr) && !submittedDays.has(yesterdayStr)) {
+            return 0;
+        }
+        
+        // If today has a submission, start counting from today; otherwise start from yesterday
+        let startDate = submittedDays.has(todayStr) ? today : yesterday;
+        let loopDate = new Date(startDate);
+        
+        // Count backwards consecutive days
+        while (true) {
+            const loopStr = loopDate.toISOString().split('T')[0];
+            if (submittedDays.has(loopStr)) {
+                currentStreak++;
+                loopDate.setDate(loopDate.getDate() - 1);
+            } else {
+                break;
+            }
+        }
+        
+        return currentStreak;
+    }
 
     function updateStats(data) {
         // Elements
@@ -29,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const mediumPercentEl = document.getElementById('lc-medium-percent');
         const hardPercentEl = document.getElementById('lc-hard-percent');
         const rankingEl = document.getElementById('lc-ranking');
-        const reputationEl = document.getElementById('lc-reputation');
-        const streakEl = document.getElementById('lc-streak');
+        const maxStreakEl = document.getElementById('lc-max-streak');
+        const activeStreakEl = document.getElementById('lc-active-streak');
         
         // Progress Bars
         const easyBar = document.getElementById('lc-easy-bar');
@@ -55,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (hardPercentEl) hardPercentEl.textContent = `/${data.totalHard}`;
         
         if (rankingEl) rankingEl.textContent = `#${Number(data.ranking).toLocaleString()}`;
-        if (reputationEl) reputationEl.textContent = Number(data.reputation).toLocaleString();
-        if (streakEl) streakEl.textContent = `${data.streak} Days`;
+        if (maxStreakEl) maxStreakEl.textContent = `${data.maxStreak} Days`;
+        if (activeStreakEl) activeStreakEl.textContent = `${data.activeStreak} Days`;
 
         // Animate circular meter
         if (circleProgress) {
@@ -74,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initialize with fallback first so that the user immediately sees data
-    // and doesn't get stuck on empty dashboards if APIs take time or fail
     updateStats(fallbackData);
 
     // Fetch profile stats
@@ -85,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(profileData => {
             if (profileData && typeof profileData.totalSolved !== 'undefined') {
-                // Merge loaded profile stats with current state (which has fallback streak)
                 fallbackData.totalSolved = profileData.totalSolved;
                 fallbackData.totalQuestions = profileData.totalQuestions;
                 fallbackData.easySolved = profileData.easySolved;
@@ -95,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 fallbackData.hardSolved = profileData.hardSolved;
                 fallbackData.totalHard = profileData.totalHard;
                 fallbackData.ranking = profileData.ranking;
-                fallbackData.reputation = profileData.reputation;
                 
                 updateStats(fallbackData);
             }
@@ -110,7 +159,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(calendarData => {
             if (calendarData && typeof calendarData.streak !== 'undefined') {
-                fallbackData.streak = calendarData.streak;
+                fallbackData.maxStreak = calendarData.streak; // API streak value represents the Max Streak
+                fallbackData.activeStreak = calculateCurrentStreak(calendarData.submissionCalendar); // Calculate active current streak
                 updateStats(fallbackData);
             }
         })
