@@ -728,17 +728,49 @@
 
                         <!-- LeetCode Heatmap -->
                         <div class="coding-card heatmap-card">
-                            <div class="card-header-row">
+                            <div class="card-header-row" style="margin-bottom: 0.5rem; padding-bottom: 0.5rem;">
                                 <div class="card-brand">
                                     <i class="fab fa-leetcode leetcode-color"></i>
                                     <div>
                                         <h3>LeetCode Submission Heatmap</h3>
-                                        <span>Consistency and Daily Solved Log</span>
+                                        <span>Dynamic Calendar Tracker</span>
                                     </div>
                                 </div>
+                                <!-- Year Tabs Selector -->
+                                <div class="heatmap-tabs" id="lc-heatmap-tabs">
+                                    <button class="heatmap-tab-btn active" data-year="2026">2026</button>
+                                    <button class="heatmap-tab-btn" data-year="2025">2025</button>
+                                    <button class="heatmap-tab-btn" data-year="2024">2024</button>
+                                </div>
                             </div>
-                            <div class="heatmap-wrapper" style="flex-grow: 1; display: flex; align-items: center;">
-                                <img src="assets/leetcode-heatmap.png" alt="Manoj Pentapati's LeetCode Submission Heatmap" onerror="this.src='https://placehold.co/600x120/0f172a/7c3aed?text=Upload+leetcode-heatmap.png';" loading="lazy">
+                            
+                            <div class="heatmap-wrapper" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                                <div class="lc-heatmap-container">
+                                    <!-- Month Labels Row -->
+                                    <div class="lc-months-row">
+                                        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+                                    </div>
+                                    <div class="lc-grid-row">
+                                        <!-- Day Labels Sidebar -->
+                                        <div class="lc-days-sidebar">
+                                            <span>Mon</span>
+                                            <span>Wed</span>
+                                            <span>Fri</span>
+                                        </div>
+                                        <!-- Grid Insertion -->
+                                        <div id="lc-heatmap-grid-container" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Legend Row -->
+                                <div class="lc-heatmap-legend">
+                                    <span>Less</span>
+                                    <span class="legend-cell level-0"></span>
+                                    <span class="legend-cell level-1"></span>
+                                    <span class="legend-cell level-2"></span>
+                                    <span class="legend-cell level-3"></span>
+                                    <span class="legend-cell level-4"></span>
+                                    <span>More</span>
+                                </div>
                             </div>
                         </div>
                     </div>
