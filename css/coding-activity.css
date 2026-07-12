@@ -326,6 +326,39 @@
 .fill-medium { background: #ffc01e; }
 .fill-hard { background: #ef4743; }
 
+/* Code360 Color Rules */
+.circle-progress-ninja {
+    stroke: #f27c22;
+}
+.dot-ninja-coding { width: 6px; height: 6px; border-radius: 50%; background: #f27c22; }
+.dot-ninja-mcq { width: 6px; height: 6px; border-radius: 50%; background: #3b82f6; }
+.dot-ninja-contest { width: 6px; height: 6px; border-radius: 50%; background: #10b981; }
+
+.color-ninja-coding { color: #f27c22; }
+.color-ninja-mcq { color: #3b82f6; }
+.color-ninja-contest { color: #10b981; }
+
+.fill-ninja-coding { background: #f27c22; }
+.fill-ninja-mcq { background: #3b82f6; }
+.fill-ninja-contest { background: #10b981; }
+
+/* TUF Color Rules */
+.circle-progress-tuf {
+    stroke: #ec4899;
+}
+.dot-tuf-a2z { width: 6px; height: 6px; border-radius: 50%; background: #ec4899; }
+.dot-tuf-sde { width: 6px; height: 6px; border-radius: 50%; background: #a855f7; }
+.dot-tuf-cp { width: 6px; height: 6px; border-radius: 50%; background: #f59e0b; }
+
+.color-tuf-a2z { color: #ec4899; }
+.color-tuf-sde { color: #a855f7; }
+.color-tuf-cp { color: #f59e0b; }
+
+.fill-tuf-a2z { background: #ec4899; }
+.fill-tuf-sde { background: #a855f7; }
+.fill-tuf-cp { background: #f59e0b; }
+
+
 /* LeetCode Footer Stats */
 .leetcode-footer-stats {
     display: grid;
