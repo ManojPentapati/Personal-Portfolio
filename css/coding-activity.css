@@ -478,8 +478,10 @@
 }
 
 .heatmap-wrapper img {
+    width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 120px;
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
     transition: var(--transition-fast);
@@ -506,155 +508,50 @@
     }
     
     .heatmap-wrapper img {
-        min-width: 100%;
+        min-width: 550px; /* Keep heatmaps scrollable and readable on small viewports */
     }
 }
 
-/* Custom Interactive LeetCode Heatmap styles */
-.heatmap-tabs {
-    display: flex;
-    gap: 0.35rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-subtle);
-    padding: 0.25rem;
-    border-radius: 30px;
-}
-
-.heatmap-tab-btn {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--text-secondary);
-    padding: 0.35rem 0.85rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.heatmap-tab-btn:hover {
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.heatmap-tab-btn.active {
-    color: #fff;
-    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-purple-light) 100%);
-    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
-}
-
-.lc-heatmap-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 660px; /* Keep grid columns standard size */
-}
-
-.lc-months-row {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 28px;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    margin-bottom: 6px;
-    padding-right: 8px;
-}
-
-.lc-months-row span {
-    width: 30px;
-    text-align: center;
-}
-
-.lc-grid-row {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-}
-
-.lc-days-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 88px;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    padding-top: 1px;
-    padding-bottom: 1px;
-    width: 20px;
-    text-align: left;
-}
-
-.lc-heatmap-grid {
-    display: grid;
-    grid-template-rows: repeat(7, 10px);
-    grid-auto-flow: column;
-    gap: 3px;
-}
-
-.lc-heatmap-cell {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.02);
-    transition: transform 0.1s ease, background-color 0.2s ease;
-}
-
-.lc-heatmap-cell:hover {
-    transform: scale(1.3);
-    z-index: 10;
-    box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-}
-
-.lc-heatmap-cell.cell-out-of-year {
-    background-color: transparent !important;
-    border: none !important;
-    pointer-events: none;
-    visibility: hidden;
-}
-
-/* Custom Purple Gradient Intensity Levels */
-.lc-heatmap-cell.level-0 {
-    background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.02);
-}
-
-.lc-heatmap-cell.level-1 {
-    background-color: rgba(124, 58, 237, 0.25);
-    border-color: rgba(124, 58, 237, 0.1);
-}
-
-.lc-heatmap-cell.level-2 {
-    background-color: rgba(124, 58, 237, 0.5);
-    border-color: rgba(124, 58, 237, 0.25);
-}
-
-.lc-heatmap-cell.level-3 {
-    background-color: rgba(124, 58, 237, 0.75);
-    border-color: rgba(124, 58, 237, 0.4);
-}
-
-.lc-heatmap-cell.level-4 {
-    background-color: rgba(124, 58, 237, 1);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 4px rgba(124, 58, 237, 0.6);
-}
-
-.lc-heatmap-legend {
+/* Custom Interactive LeetCode Heatmap Dropdown Styles */
+.heatmap-dropdown-container {
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    margin-top: 12px;
-    margin-left: 28px;
 }
 
-.legend-cell {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
+.heatmap-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 0.4rem 2rem 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+.heatmap-select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(124, 58, 237, 0.35);
+}
+
+.heatmap-select:focus {
+    border-color: var(--accent-purple-light);
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.heatmap-select option {
+    background: #0f172a; /* Solid dark color to look good on all browsers */
+    color: var(--text-primary);
+    padding: 10px;
+    font-weight: 600;
 }
 

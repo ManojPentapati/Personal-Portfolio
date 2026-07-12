@@ -113,25 +113,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
     }
 
-    // Set up click handlers for Heatmap tabs to swap static screenshots
-    const tabContainer = document.getElementById('lc-heatmap-tabs');
+    // Set up change handler for Heatmap dropdown select to swap static screenshots
+    const heatmapSelect = document.getElementById('lc-heatmap-select');
     const heatmapImg = document.getElementById('lc-heatmap-img');
     
-    if (tabContainer && heatmapImg) {
-        tabContainer.addEventListener('click', function(e) {
-            const button = e.target.closest('.heatmap-tab-btn');
-            if (!button) return;
-            
-            // Remove active class from all buttons
-            tabContainer.querySelectorAll('.heatmap-tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Add active class to clicked button
-            button.classList.add('active');
+    if (heatmapSelect && heatmapImg) {
+        heatmapSelect.addEventListener('change', function(e) {
+            const year = e.target.value;
             
             // Update image source and fallback text
-            const year = button.dataset.year;
             heatmapImg.src = `assets/leetcode-heatmap-${year}.png`;
             heatmapImg.alt = `Manoj Pentapati's LeetCode ${year} Submission Heatmap`;
             heatmapImg.onerror = function() {
