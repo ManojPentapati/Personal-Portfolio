@@ -733,17 +733,15 @@
 
 /* Special rule to fit smaller heatmaps without scroll */
 .heatmap-image-wrapper.fit-heatmap {
-    overflow-x: hidden;
-    justify-content: center;
-    padding: 0.5rem 1rem;
+    overflow: hidden;
+    padding: 0;
 }
 
 .heatmap-image-wrapper.fit-heatmap img {
-    min-width: auto;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Responsive adjustments */
