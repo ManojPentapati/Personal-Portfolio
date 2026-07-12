@@ -262,6 +262,12 @@
     border: 1px solid rgba(59, 130, 246, 0.25);
 }
 
+.project-card-icon.icon-cyan {
+    background: rgba(6, 182, 212, 0.15);
+    color: #22d3ee;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
 .project-card-title {
     color: var(--text-primary);
     font-size: 1.12rem;
@@ -344,6 +350,17 @@
 .project-card:hover .tags-blue span {
     border-color: rgba(59, 130, 246, 0.35);
     background: rgba(59, 130, 246, 0.12);
+}
+
+.tags-cyan span {
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.18);
+    color: #22d3ee;
+}
+
+.project-card:hover .tags-cyan span {
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(6, 182, 212, 0.12);
 }
 
 /* Actions Row */
