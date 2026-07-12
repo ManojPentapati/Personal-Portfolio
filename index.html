@@ -644,14 +644,8 @@
                         <p class="coding-subtitle">Track my dynamic metrics, problem-solving progress across competitive programming platforms, and open-source contribution heatmap.</p>
                     </div>
 
-                    <!-- Subsection: Profile Stats -->
-                    <div class="coding-subsection-title">
-                        <i class="fas fa-user-astronaut"></i> Platform Profiles & Statistics
-                    </div>
-
-                    <!-- 4-Column Profiles Grid -->
-                    <div class="profiles-grid">
-                        
+                    <!-- Row 1: LeetCode Stats & Heatmap -->
+                    <div class="coding-row-grid">
                         <!-- LeetCode Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
@@ -732,6 +726,25 @@
                             </div>
                         </div>
 
+                        <!-- LeetCode Heatmap -->
+                        <div class="coding-card heatmap-card">
+                            <div class="card-header-row">
+                                <div class="card-brand">
+                                    <i class="fab fa-leetcode leetcode-color"></i>
+                                    <div>
+                                        <h3>LeetCode Submission Heatmap</h3>
+                                        <span>Consistency and Daily Solved Log</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="heatmap-wrapper" style="flex-grow: 1; display: flex; align-items: center;">
+                                <img src="assets/leetcode-heatmap.png" alt="Manoj Pentapati's LeetCode Submission Heatmap" onerror="this.src='https://placehold.co/600x120/0f172a/7c3aed?text=Upload+leetcode-heatmap.png';" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Code360 Stats & Heatmap -->
+                    <div class="coding-row-grid">
                         <!-- Code360 by Coding Ninjas Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
@@ -776,6 +789,64 @@
                             </div>
                         </div>
 
+                        <!-- Code360 Heatmap -->
+                        <div class="coding-card heatmap-card">
+                            <div class="card-header-row">
+                                <div class="card-brand">
+                                    <i class="fas fa-user-ninja ninja-color"></i>
+                                    <div>
+                                        <h3>Code360 Ninja Heatmap</h3>
+                                        <span>Coding Ninjas Activity Grid</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="heatmap-wrapper" style="flex-grow: 1; display: flex; align-items: center;">
+                                <img src="assets/code360-heatmap.png" alt="Manoj Pentapati's Code360 Submission Heatmap" onerror="this.src='https://placehold.co/600x120/0f172a/7c3aed?text=Upload+code360-heatmap.png';" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: GitHub Stats & Heatmap -->
+                    <div class="coding-row-grid">
+                        <!-- GitHub Profile Card -->
+                        <div class="coding-card">
+                            <div class="card-header-row">
+                                <div class="card-brand">
+                                    <i class="fab fa-github github-color"></i>
+                                    <div>
+                                        <h3>GitHub Profile</h3>
+                                        <span>Open Source Analytics</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener" class="profile-username">@ManojPentapati</a>
+                            </div>
+
+                            <div class="github-svg-container" style="flex-grow: 1; display: flex; align-items: center;">
+                                <img src="https://github-stats-extended.vercel.app/api?username=ManojPentapati&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80" alt="GitHub Profile General Stats" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- GitHub Heatmap -->
+                        <div class="coding-card heatmap-card">
+                            <div class="card-header-row">
+                                <div class="card-brand">
+                                    <i class="fab fa-github github-color"></i>
+                                    <div>
+                                        <h3>GitHub Contributions</h3>
+                                        <span>Commit & PR Activity Calendar</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="heatmap-wrapper live-github" style="flex-grow: 1; display: flex; align-items: center;">
+                                <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener">
+                                    <img src="https://ghchart.rshah.org/7c3aed/ManojPentapati" alt="Manoj Pentapati's Live GitHub Contribution Chart" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: TakeUForward & GitHub Languages -->
+                    <div class="coding-row-grid">
                         <!-- TakeUForward (TUF) Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
@@ -820,29 +891,8 @@
                             </div>
                         </div>
 
-                        <!-- GitHub Profile Card -->
+                        <!-- Top Languages Card -->
                         <div class="coding-card">
-                            <div class="card-header-row">
-                                <div class="card-brand">
-                                    <i class="fab fa-github github-color"></i>
-                                    <div>
-                                        <h3>GitHub Profile</h3>
-                                        <span>Open Source Analytics</span>
-                                    </div>
-                                </div>
-                                <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener" class="profile-username">@ManojPentapati</a>
-                            </div>
-
-                            <div class="github-svg-container" style="flex-grow: 1; display: flex; align-items: center;">
-                                <img src="https://github-stats-extended.vercel.app/api?username=ManojPentapati&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80" alt="GitHub Profile General Stats" loading="lazy">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Subsection: GitHub Language Stats -->
-                    <div class="profiles-grid" style="grid-template-columns: 1fr; margin-bottom: 2.5rem;">
-                        <div class="coding-card" style="padding: 1.5rem;">
                             <div class="card-header-row" style="margin-bottom: 0.75rem; padding-bottom: 0.75rem;">
                                 <div class="card-brand">
                                     <i class="fas fa-code github-color"></i>
@@ -852,71 +902,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="github-svg-container" style="justify-content: flex-start;">
-                                <img style="max-height: 180px; width: auto;" src="https://github-stats-extended.vercel.app/api/top-langs?username=ManojPentapati&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80&langs_count=6" alt="GitHub Top Languages Stats" loading="lazy">
+                            <div class="github-svg-container" style="flex-grow: 1; display: flex; align-items: center;">
+                                <img src="https://github-stats-extended.vercel.app/api/top-langs?username=ManojPentapati&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80&langs_count=6" alt="GitHub Top Languages Stats" loading="lazy">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Subsection: Activity Heatmaps -->
-                    <div class="coding-subsection-title">
-                        <i class="fas fa-calendar-alt"></i> Submission Heatmaps
-                    </div>
-
-                    <!-- 3-Column Heatmaps Grid -->
-                    <div class="heatmaps-grid">
-                        
-                        <!-- GitHub Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="card-header-row">
-                                <div class="card-brand">
-                                    <i class="fab fa-github github-color"></i>
-                                    <div>
-                                        <h3>GitHub Contributions</h3>
-                                        <span>Commit & PR Activity Calendar</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="heatmap-wrapper live-github">
-                                <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener">
-                                    <img src="https://ghchart.rshah.org/7c3aed/ManojPentapati" alt="Manoj Pentapati's Live GitHub Contribution Chart" loading="lazy">
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- LeetCode Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="card-header-row">
-                                <div class="card-brand">
-                                    <i class="fab fa-leetcode leetcode-color"></i>
-                                    <div>
-                                        <h3>LeetCode Submission Heatmap</h3>
-                                        <span>Consistency and Daily Solved Log</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="heatmap-wrapper">
-                                <img src="assets/leetcode-heatmap.png" alt="Manoj Pentapati's LeetCode Submission Heatmap" onerror="this.src='https://placehold.co/600x120/0f172a/7c3aed?text=Upload+leetcode-heatmap.png';" loading="lazy">
-                            </div>
-                        </div>
-
-                        <!-- Code360 Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="card-header-row">
-                                <div class="card-brand">
-                                    <i class="fas fa-user-ninja ninja-color"></i>
-                                    <div>
-                                        <h3>Code360 Ninja Heatmap</h3>
-                                        <span>Coding Ninjas Activity Grid</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="heatmap-wrapper">
-                                <img src="assets/code360-heatmap.png" alt="Manoj Pentapati's Code360 Submission Heatmap" onerror="this.src='https://placehold.co/600x120/0f172a/7c3aed?text=Upload+code360-heatmap.png';" loading="lazy">
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </section>
 

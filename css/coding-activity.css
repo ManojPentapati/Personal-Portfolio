@@ -67,6 +67,22 @@
     font-size: 1.3rem;
 }
 
+/* Coding Row Grid Layout (Stats + Heatmap side by side) */
+.coding-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+    .coding-row-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 /* Profiles Grid (4 Columns) */
 .profiles-grid {
     display: grid;
