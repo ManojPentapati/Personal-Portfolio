@@ -124,6 +124,11 @@ section {
     transition: var(--transition);
 }
 
+.project-image.contain {
+    object-fit: contain;
+    background: #0f172a; /* Dark card background fallback */
+}
+
 .project-video {
     background: #000;
 }
