@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="css/contact.css?v=1.1">
     <link rel="stylesheet" href="css/footer.css?v=1.1">
     <link rel="stylesheet" href="css/modal.css?v=1.1">
+    <link rel="stylesheet" href="css/coding-activity.css?v=1.0">
     <link rel="stylesheet" href="css/backtotop.css?v=1.1">
     <link rel="stylesheet" href="css/animations.css?v=1.2">
     <link rel="stylesheet" href="css/print.css" media="print">
@@ -105,6 +106,7 @@
                 <a href="#About">About</a>
                 <a href="#Skills">Skills</a>
                 <a href="#Experience">Experience</a>
+                <a href="#CodingActivity">Dashboard</a>
                 <a href="#Projects">Projects</a>
                 <a href="#Education">Education</a>
                 <a href="#Achievements">Achievements</a>
@@ -626,6 +628,151 @@
                                     standardized assessments.</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================
+                 CODING ACTIVITY & DEV DASHBOARD
+                 ======================================== -->
+            <section id="CodingActivity" class="coding-activity-section">
+                <div class="container">
+                    <!-- Section Header -->
+                    <div class="coding-header">
+                        <span class="coding-badge"><i class="fas fa-terminal"></i> Live Metrics</span>
+                        <h1 class="coding-title">Coding <span>Activity & Profiles</span></h1>
+                        <p class="coding-subtitle">Real-time metrics tracking my problem-solving consistency, open-source code contributions, and languages.</p>
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div class="coding-grid">
+                        
+                        <!-- LeetCode Interactive Card -->
+                        <div class="coding-card">
+                            <div class="card-header-row">
+                                <div class="card-brand">
+                                    <i class="fab fa-leetcode leetcode-color"></i>
+                                    <div>
+                                        <h3>LeetCode Stats</h3>
+                                        <span>Competitive Programming</span>
+                                    </div>
+                                </div>
+                                <a href="https://leetcode.com/u/221FA23057/" target="_blank" rel="noopener" class="profile-username">@221FA23057</a>
+                            </div>
+
+                            <div class="leetcode-stats-body">
+                                <!-- Circular Meter -->
+                                <div class="leetcode-progress-circle-wrapper">
+                                    <svg class="leetcode-progress-circle" width="140" height="140">
+                                        <circle class="circle-bg" cx="70" cy="70" r="60"></circle>
+                                        <circle class="circle-progress" cx="70" cy="70" r="60"></circle>
+                                    </svg>
+                                    <div class="circle-content">
+                                        <span class="circle-number" id="lc-solved-count">---</span>
+                                        <span class="circle-total">Solved</span>
+                                    </div>
+                                </div>
+
+                                <!-- Progress Bars -->
+                                <div class="leetcode-bars-wrapper">
+                                    <!-- Easy -->
+                                    <div class="stat-bar-item">
+                                        <div class="bar-labels">
+                                            <span class="difficulty-label"><span class="dot-easy"></span> Easy</span>
+                                            <span class="bar-numbers"><span id="lc-easy-solved">---</span><span id="lc-easy-percent">/---</span></span>
+                                        </div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill fill-easy" id="lc-easy-bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Medium -->
+                                    <div class="stat-bar-item">
+                                        <div class="bar-labels">
+                                            <span class="difficulty-label"><span class="dot-medium"></span> Medium</span>
+                                            <span class="bar-numbers"><span id="lc-medium-solved">---</span><span id="lc-medium-percent">/---</span></span>
+                                        </div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill fill-medium" id="lc-medium-bar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Hard -->
+                                    <div class="stat-bar-item">
+                                        <div class="bar-labels">
+                                            <span class="difficulty-label"><span class="dot-hard"></span> Hard</span>
+                                            <span class="bar-numbers"><span id="lc-hard-solved">---</span><span id="lc-hard-percent">/---</span></span>
+                                        </div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill fill-hard" id="lc-hard-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer LeetCode Stats -->
+                            <div class="leetcode-footer-stats">
+                                <div class="footer-stat-box">
+                                    <span>Global Rank</span>
+                                    <h4 id="lc-ranking">#---</h4>
+                                </div>
+                                <div class="footer-stat-box">
+                                    <span>Reputation</span>
+                                    <h4 id="lc-reputation">---</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Cards Column -->
+                        <div class="github-cards-subgrid">
+                            <!-- Top Languages SVG Card -->
+                            <div class="coding-card">
+                                <div class="card-header-row" style="margin-bottom: 0.75rem; padding-bottom: 0.75rem;">
+                                    <div class="card-brand">
+                                        <i class="fab fa-github github-color"></i>
+                                        <div>
+                                            <h3>GitHub Top Languages</h3>
+                                            <span>Most Used Technologies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="github-svg-container">
+                                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ManojPentapati&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80&langs_count=5" alt="GitHub Top Languages Stats" loading="lazy">
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub Profile General Stats Card -->
+                            <div class="coding-card">
+                                <div class="card-header-row" style="margin-bottom: 0.75rem; padding-bottom: 0.75rem;">
+                                    <div class="card-brand">
+                                        <i class="fas fa-chart-line github-color"></i>
+                                        <div>
+                                            <h3>GitHub Contributions</h3>
+                                            <span>Commit & Repository Stats</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="github-svg-container">
+                                    <img src="https://github-readme-stats.vercel.app/api?username=ManojPentapati&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80" alt="GitHub Profile General Stats" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Contribution Heatmap Card (Spans both columns) -->
+                        <div class="coding-card heatmap-card">
+                            <div class="card-header-row" style="margin-bottom: 1.25rem; padding-bottom: 1rem;">
+                                <div class="card-brand">
+                                    <i class="fas fa-calendar-alt github-color"></i>
+                                    <div>
+                                        <h3>Contribution Heatmap</h3>
+                                        <span>Year-round activity calendar</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener" class="profile-username">@ManojPentapati</a>
+                            </div>
+                            <div class="heatmap-wrapper">
+                                <img src="https://ghchart.rshah.org/7c3aed/ManojPentapati" alt="Manoj Pentapati's Live GitHub Contribution Chart" loading="lazy">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -1507,6 +1654,7 @@
     <script src="js/interactions.js"></script>
     <script src="js/skills.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/leetcode-stats.js"></script>
 
     <!-- Preloader Dismiss -->
     <script>
