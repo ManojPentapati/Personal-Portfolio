@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Animate circular meter
         if (circleProgress) {
-            const circumference = 377; // 2 * PI * r (r=60)
+            const circumference = 251.2; // 2 * PI * r (r=40)
             const offset = circumference - (totalPct / 100) * circumference;
             circleProgress.style.strokeDashoffset = offset;
         }
