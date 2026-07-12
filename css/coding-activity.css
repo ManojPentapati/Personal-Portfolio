@@ -661,7 +661,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     background: #0d1117;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     display: flex;
     align-items: center;
 }
@@ -699,9 +699,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     border-top: 1px solid var(--border-subtle);
-    flex-grow: 1;
 }
 
 .heatmap-stat {
