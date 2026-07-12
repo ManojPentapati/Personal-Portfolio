@@ -524,3 +524,87 @@ textarea:focus-visible {
         padding: 1.1rem;
     }
 }
+
+/* Image Zoom Indicator */
+.project-image {
+    cursor: zoom-in;
+}
+
+/* Image Lightbox Modal */
+.image-lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 6, 15, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-lightbox-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.image-lightbox-content {
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 12px;
+    border: 1px solid var(--border-card);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.image-lightbox-modal.show .image-lightbox-content {
+    transform: scale(1);
+}
+
+.image-lightbox-caption {
+    margin: 1.5rem auto 0;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    transition: var(--transition-fast);
+    cursor: pointer;
+    z-index: 1200;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.image-lightbox-close:hover {
+    color: var(--accent-purple-light);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .image-lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+    }
+    .image-lightbox-content {
+        max-width: 95%;
+    }
+}

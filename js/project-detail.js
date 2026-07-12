@@ -78,4 +78,68 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // -----------------------------------------------
+    // Click to Enlarge Image Lightbox Modal
+    // -----------------------------------------------
+    const projectImages = document.querySelectorAll('.project-image');
+    
+    if (projectImages.length > 0) {
+        // Create lightbox elements dynamically if they don't exist
+        let lightbox = document.getElementById('imageLightbox');
+        if (!lightbox) {
+            lightbox = document.createElement('div');
+            lightbox.id = 'imageLightbox';
+            lightbox.className = 'image-lightbox-modal';
+            lightbox.innerHTML = `
+                <button class="image-lightbox-close" id="closeLightbox" aria-label="Close image popup">&times;</button>
+                <img class="image-lightbox-content" id="lightboxImg" src="" alt="Enlarged screenshot">
+                <div class="image-lightbox-caption" id="lightboxCaption"></div>
+            `;
+            document.body.appendChild(lightbox);
+            
+            // Close event triggers
+            const closeBtn = lightbox.querySelector('#closeLightbox');
+            
+            const closeLightboxFunc = () => {
+                lightbox.classList.remove('show');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+            };
+            
+            closeBtn.addEventListener('click', closeLightboxFunc);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightboxFunc();
+                }
+            });
+            
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+                    closeLightboxFunc();
+                }
+            });
+
+            // Keep reference to close function globally on the element for listeners
+            lightbox.closeLightbox = closeLightboxFunc;
+        }
+
+        projectImages.forEach(image => {
+            image.addEventListener('click', () => {
+                const img = lightbox.querySelector('#lightboxImg');
+                const caption = lightbox.querySelector('#lightboxCaption');
+                
+                img.src = image.src;
+                caption.textContent = image.alt || '';
+                
+                lightbox.style.display = 'flex';
+                // Trigger reflow
+                lightbox.offsetHeight;
+                lightbox.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+    }
 });
