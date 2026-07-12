@@ -1,6 +1,7 @@
 // LeetCode Dynamic Stats Fetcher & Render
 document.addEventListener('DOMContentLoaded', function() {
-    const apiEndpoint = 'https://alfa-leetcode-api.onrender.com/userProfile/221FA23057';
+    const profileApi = 'https://alfa-leetcode-api.onrender.com/userProfile/221FA23057';
+    const calendarApi = 'https://alfa-leetcode-api.onrender.com/221FA23057/calendar';
     
     // Fallback static data in case the public API fails or is rate-limited
     const fallbackData = {
@@ -14,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         totalHard: 953,
         ranking: 355340,
         contributionPoint: 836,
-        reputation: 72
+        reputation: 72,
+        streak: 107
     };
 
     function updateStats(data) {
@@ -27,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const mediumPercentEl = document.getElementById('lc-medium-percent');
         const hardPercentEl = document.getElementById('lc-hard-percent');
         const rankingEl = document.getElementById('lc-ranking');
-        const pointsEl = document.getElementById('lc-points');
         const reputationEl = document.getElementById('lc-reputation');
+        const streakEl = document.getElementById('lc-streak');
         
         // Progress Bars
         const easyBar = document.getElementById('lc-easy-bar');
@@ -53,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (hardPercentEl) hardPercentEl.textContent = `/${data.totalHard}`;
         
         if (rankingEl) rankingEl.textContent = `#${Number(data.ranking).toLocaleString()}`;
-        if (pointsEl) pointsEl.textContent = Number(data.contributionPoint).toLocaleString();
         if (reputationEl) reputationEl.textContent = Number(data.reputation).toLocaleString();
+        if (streakEl) streakEl.textContent = `${data.streak} Days`;
 
         // Animate circular meter
         if (circleProgress) {
@@ -65,28 +67,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Animate progress bars
         setTimeout(() => {
-            if (easyBar) easyBar.style.width = `${Math.min(easyPct * 5, 100)}%`; // Scaled for display representation
+            if (easyBar) easyBar.style.width = `${Math.min(easyPct * 5, 100)}%`;
             if (mediumBar) mediumBar.style.width = `${Math.min(mediumPct * 5, 100)}%`;
-            if (hardBar) hardBar.style.width = `${Math.min(hardPct * 15, 100)}%`; // Scaled hard difficulty progress visibility
+            if (hardBar) hardBar.style.width = `${Math.min(hardPct * 15, 100)}%`;
         }, 150);
     }
 
-    // Try fetching the live stats
-    fetch(apiEndpoint)
-        .then(response => {
-            if (!response.ok) throw new Error('API request failed');
-            return response.json();
-        })
-        .then(data => {
-            // Check if returned data contains required stats structure
-            if (data && typeof data.totalSolved !== 'undefined') {
-                updateStats(data);
-            } else {
-                throw new Error('Invalid data schema');
-            }
-        })
-        .catch(err => {
-            console.warn('LeetCode API failed, loading fallback metrics:', err);
-            updateStats(fallbackData);
-        });
+    // Try fetching both APIs in parallel
+    Promise.all([
+        fetch(profileApi).then(res => { if (!res.ok) throw new Error(); return res.json(); }),
+        fetch(calendarApi).then(res => { if (!res.ok) throw new Error(); return res.json(); })
+    ])
+    .then(([profileData, calendarData]) => {
+        if (profileData && typeof profileData.totalSolved !== 'undefined') {
+            // Combine both datasets
+            const combinedData = {
+                ...profileData,
+                streak: (calendarData && typeof calendarData.streak !== 'undefined') ? calendarData.streak : fallbackData.streak
+            };
+            updateStats(combinedData);
+        } else {
+            throw new Error('Invalid data schema');
+        }
+    })
+    .catch(err => {
+        console.warn('LeetCode APIs failed or rate-limited, loading fallback metrics:', err);
+        updateStats(fallbackData);
+    });
 });
