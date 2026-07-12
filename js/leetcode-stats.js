@@ -130,6 +130,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Set up change handler for TUF Heatmap dropdown select
+    const tufSelect = document.getElementById('tuf-heatmap-select');
+    const tufImg = document.getElementById('tuf-heatmap-img');
+    
+    if (tufSelect && tufImg) {
+        tufSelect.addEventListener('change', function(e) {
+            const year = e.target.value;
+            
+            tufImg.src = `assets/tuf-heatmap-${year}.png`;
+            tufImg.alt = `Manoj Pentapati's TakeUForward ${year} Submission Heatmap`;
+            tufImg.onerror = function() {
+                this.src = `https://placehold.co/800x180/1a1a2e/ec4899?text=TUF+Heatmap+${year}`;
+            };
+        });
+    }
+
     // Initial render
     updateStats(fallbackData);
 
