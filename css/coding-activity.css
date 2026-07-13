@@ -1051,9 +1051,11 @@ img.code360-heatmap {
     stroke-dashoffset: 70;
 }
 
-/* pulsating fire icon for streaks */
+/* pulsating fire icon for streaks with real fire emoji gradient colors */
 .streak-fire {
-    color: #ff4500;
+    background: linear-gradient(180deg, #ff4500 0%, #ff8c00 50%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-right: 0.25rem;
     filter: drop-shadow(0 0 2px rgba(255, 69, 0, 0.6));
     animation: firePulse 1.2s ease-in-out infinite alternate;
