@@ -770,9 +770,6 @@
     margin: 0 auto;
 }
 
-.heatmap-viewer-card:hover .heatmap-image-wrapper img {
-    transform: scale(1.03);
-}
 
 /* Stats overlay at the bottom of panel */
 .heatmap-panel-overlay {
