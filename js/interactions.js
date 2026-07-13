@@ -283,3 +283,110 @@ function initProjectsFilter() {
 }
 
 initProjectsFilter();
+
+
+// ---- Heatmap Viewer Tab Switcher ----
+function initHeatmapTabs() {
+    const tabs = document.querySelectorAll('.heatmap-tab');
+    const panels = document.querySelectorAll('.heatmap-panel');
+
+    if (tabs.length === 0 || panels.length === 0) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to current tab
+            tab.classList.add('active');
+
+            // Hide all panels
+            panels.forEach(p => p.classList.remove('active'));
+
+            // Show target panel
+            const platform = tab.getAttribute('data-platform');
+            const targetPanel = document.getElementById(`panel-${platform}`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        });
+    });
+}
+
+initHeatmapTabs();
+
+
+// ---- Heatmap Zoom Lightbox Modal ----
+function initHeatmapZoom() {
+    const zoomableImages = document.querySelectorAll('.heatmap-zoomable');
+    if (zoomableImages.length === 0) return;
+
+    // Create lightbox elements dynamically if they don't exist
+    let lightbox = document.getElementById('imageLightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'imageLightbox';
+        lightbox.className = 'image-lightbox-modal';
+        lightbox.innerHTML = `
+            <button class="image-lightbox-close" id="closeLightbox" aria-label="Close image popup"><i class="fas fa-compress"></i></button>
+            <img class="image-lightbox-content" id="lightboxImg" src="" alt="Enlarged heatmap">
+            <div class="image-lightbox-caption" id="lightboxCaption"></div>
+        `;
+        document.body.appendChild(lightbox);
+        
+        // Close event triggers
+        const closeBtn = lightbox.querySelector('#closeLightbox');
+        const closeLightboxFunc = () => {
+            lightbox.classList.remove('show');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300);
+        };
+        
+        closeBtn.addEventListener('click', closeLightboxFunc);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightboxFunc();
+            }
+        });
+        
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+                closeLightboxFunc();
+            }
+        });
+    }
+
+    zoomableImages.forEach(image => {
+        const wrapper = image.closest('.heatmap-image-wrapper');
+        if (wrapper) {
+            wrapper.style.position = 'relative';
+            
+            const enlargeBtn = document.createElement('div');
+            enlargeBtn.className = 'enlarge-btn-indicator';
+            enlargeBtn.innerHTML = '<i class="fas fa-expand"></i>';
+            enlargeBtn.setAttribute('title', 'Click to enlarge');
+            wrapper.appendChild(enlargeBtn);
+            
+            enlargeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                image.click();
+            });
+        }
+
+        image.addEventListener('click', () => {
+            const img = lightbox.querySelector('#lightboxImg');
+            const caption = lightbox.querySelector('#lightboxCaption');
+            
+            img.src = image.src;
+            caption.textContent = image.alt || 'Submission Heatmap';
+            
+            lightbox.style.display = 'flex';
+            lightbox.offsetHeight; // trigger reflow
+            lightbox.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+}
+
+initHeatmapZoom();

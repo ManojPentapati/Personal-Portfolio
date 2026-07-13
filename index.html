@@ -644,13 +644,13 @@
                         <p class="coding-subtitle">Track my dynamic metrics, problem-solving progress across competitive programming platforms, and open-source contribution heatmap.</p>
                     </div>
 
-                    <!-- Row 1: LeetCode Stats & Heatmap -->
-                    <div class="coding-row-grid">
+                    <!-- Coding Stats Grid -->
+                    <div class="stats-grid-container">
                         <!-- LeetCode Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
                                 <div class="card-brand">
-                                    <i class="fab fa-leetcode leetcode-color"></i>
+                                    <img class="brand-icon" src="assets/leetcode-logo.ico" alt="LeetCode Logo">
                                     <div>
                                         <h3>LeetCode Stats</h3>
                                         <span>Live Metrics</span>
@@ -725,63 +725,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- LeetCode Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="heatmap-card-header">
-                                <div class="heatmap-card-info">
-                                    <div class="heatmap-card-icon icon-leetcode">
-                                        <i class="fas fa-fire"></i>
-                                    </div>
-                                    <div>
-                                        <h4>LeetCode Submissions</h4>
-                                        <span>Consistency & Daily Solved Log</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-dropdown-container">
-                                    <select class="heatmap-select" id="lc-heatmap-select">
-                                        <option value="2026">2026</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2024">2024</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="heatmap-image-wrapper">
-                                <img id="lc-heatmap-img" src="assets/leetcode-heatmap-2026.png" alt="Manoj Pentapati's LeetCode 2026 Submission Heatmap" onerror="this.src='https://placehold.co/800x180/1a1a2e/7c3aed?text=LeetCode+Heatmap';" loading="lazy">
-                            </div>
-                            <div class="heatmap-stats-row">
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-calendar-check"></i>
-                                    <div>
-                                        <span class="stat-value">308</span>
-                                        <span class="stat-label">Active Days</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-fire-flame-curved"></i>
-                                    <div>
-                                        <span class="stat-value">107</span>
-                                        <span class="stat-label">Max Streak</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-code"></i>
-                                    <div>
-                                        <span class="stat-value">440+</span>
-                                        <span class="stat-label">Submissions</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 2: Code360 Stats & Heatmap -->
-                    <div class="coding-row-grid">
                         <!-- Code360 by Coding Ninjas Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
                                 <div class="card-brand">
-                                    <i class="fas fa-user-ninja ninja-color"></i>
+                                    <img class="brand-icon" src="assets/code360-logo.ico" alt="Coding Ninjas Logo">
                                     <div>
                                         <h3>Code360 Stats</h3>
                                         <span>Coding Ninjas</span>
@@ -856,50 +804,7 @@
                             </div>
                         </div>
 
-                        <!-- Code360 Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="heatmap-card-header">
-                                <div class="heatmap-card-info">
-                                    <div class="heatmap-card-icon icon-ninja">
-                                        <i class="fas fa-user-ninja"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Code360 Activity</h4>
-                                        <span>Coding Ninjas Grid</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="heatmap-image-wrapper fit-heatmap">
-                                <img src="assets/code360-heatmap.png" alt="Manoj Pentapati's Code360 Submission Heatmap" onerror="this.src='https://placehold.co/800x180/1a1a2e/f27c22?text=Code360+Heatmap';" loading="lazy">
-                            </div>
-                            <div class="heatmap-stats-row">
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-trophy"></i>
-                                    <div>
-                                        <span class="stat-value">Expert</span>
-                                        <span class="stat-label">Ninja Level</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-check-double"></i>
-                                    <div>
-                                        <span class="stat-value">300+</span>
-                                        <span class="stat-label">Solved</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-star"></i>
-                                    <div>
-                                        <span class="stat-value">1800+</span>
-                                        <span class="stat-label">Score</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Row 3: TakeUForward Stats & Heatmap -->
-                    <div class="coding-row-grid">
                         <!-- TakeUForward (TUF) Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
@@ -979,61 +884,12 @@
                             </div>
                         </div>
 
-                        <!-- TakeUForward Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="heatmap-card-header">
-                                <div class="heatmap-card-info">
-                                    <div class="heatmap-card-icon icon-tuf">
-                                        <i class="fas fa-bolt"></i>
-                                    </div>
-                                    <div>
-                                        <h4>TakeUForward Progress</h4>
-                                        <span>TUF Practice Grid</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-dropdown-container">
-                                    <select class="heatmap-select" id="tuf-heatmap-select">
-                                        <option value="2026">2026</option>
-                                        <option value="2025">2025</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="heatmap-image-wrapper tuf-heatmap-wrapper">
-                                <img id="tuf-heatmap-img" src="assets/tuf-heatmap-2026.png" alt="Manoj Pentapati's TakeUForward 2026 Submission Heatmap" onerror="this.src='https://placehold.co/800x180/1a1a2e/ec4899?text=TUF+Heatmap';" loading="lazy">
-                            </div>
-                            <div class="heatmap-stats-row">
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-layer-group"></i>
-                                    <div>
-                                        <span class="stat-value">450+</span>
-                                        <span class="stat-label">Problems</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-chart-line"></i>
-                                    <div>
-                                        <span class="stat-value">92%</span>
-                                        <span class="stat-label">Completion</span>
-                                    </div>
-                                </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-medal"></i>
-                                    <div>
-                                        <span class="stat-value">A5</span>
-                                        <span class="stat-label">Sheet</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Row 4: GitHub Stats & Heatmap -->
-                    <div class="coding-row-grid">
                         <!-- GitHub Profile Card -->
                         <div class="coding-card">
                             <div class="card-header-row">
                                 <div class="card-brand">
-                                    <i class="fab fa-github github-color"></i>
+                                    <img class="brand-icon github-icon" src="assets/github-logo.ico" alt="GitHub Logo">
                                     <div>
                                         <h3>GitHub Profile</h3>
                                         <span>Open Source Analytics</span>
@@ -1047,50 +903,182 @@
                             </div>
                         </div>
 
-                        <!-- GitHub Heatmap -->
-                        <div class="coding-card heatmap-card">
-                            <div class="heatmap-card-header">
-                                <div class="heatmap-card-info">
-                                    <div class="heatmap-card-icon icon-github">
-                                        <i class="fab fa-github"></i>
+                    </div> <!-- Close stats-grid-container -->
+
+                    <!-- ======== UNIFIED TABBED HEATMAP VIEWER ======== -->
+                    <div class="coding-card heatmap-viewer-card">
+                        <!-- Card Header -->
+                        <div class="heatmap-viewer-header">
+                            <div class="heatmap-header-info">
+                                <i class="fas fa-chart-line viewer-icon"></i>
+                                <div>
+                                    <h3>Submission Heatmaps</h3>
+                                    <span>Interactive activity logs across competitive programming and developer platforms</span>
+                                </div>
+                            </div>
+                            <!-- Tab Navigation -->
+                            <div class="heatmap-viewer-tabs">
+                                <button class="heatmap-tab active" data-platform="leetcode">
+                                    <img src="assets/leetcode-logo.ico" class="tab-brand-icon" alt="LeetCode"> LeetCode
+                                </button>
+                                <button class="heatmap-tab" data-platform="code360">
+                                    <img src="assets/code360-logo.ico" class="tab-brand-icon" alt="Code360"> Code360
+                                </button>
+                                <button class="heatmap-tab" data-platform="tuf">
+                                    <img src="assets/tuf-logo.png" class="tab-brand-icon" alt="TakeUForward"> TakeUForward
+                                </button>
+                                <button class="heatmap-tab" data-platform="github">
+                                    <img src="assets/github-logo.ico" class="tab-brand-icon github-icon" alt="GitHub"> GitHub
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Heatmap Panels -->
+                        <div class="heatmap-panels-container">
+                            <!-- LeetCode Panel -->
+                            <div class="heatmap-panel active" id="panel-leetcode">
+                                <div class="heatmap-image-wrapper">
+                                    <img id="lc-heatmap-img" class="heatmap-zoomable" src="assets/leetcode-heatmap-2026.png" alt="LeetCode Heatmap" onerror="this.src='https://placehold.co/800x180/1a1a2e/7c3aed?text=LeetCode+Heatmap';" loading="lazy">
+                                </div>
+                                <div class="heatmap-panel-overlay">
+                                    <div class="overlay-stats">
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-calendar-check"></i>
+                                            <div>
+                                                <span class="stat-value">308</span>
+                                                <span class="stat-label">Active Days</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-fire-flame-curved"></i>
+                                            <div>
+                                                <span class="stat-value">107</span>
+                                                <span class="stat-label">Max Streak</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-code"></i>
+                                            <div>
+                                                <span class="stat-value">440+</span>
+                                                <span class="stat-label">Submissions</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4>GitHub Contributions</h4>
-                                        <span>Commit & PR Activity</span>
+                                    <div class="overlay-controls">
+                                        <select class="heatmap-select" id="lc-heatmap-select">
+                                            <option value="2026">2026</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2024">2024</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="heatmap-image-wrapper">
-                                <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener">
-                                    <img src="https://ghchart.rshah.org/7c3aed/ManojPentapati" alt="Manoj Pentapati's Live GitHub Contribution Chart" loading="lazy">
-                                </a>
+
+                            <!-- Code360 Panel -->
+                            <div class="heatmap-panel" id="panel-code360">
+                                <div class="heatmap-image-wrapper">
+                                    <img class="heatmap-zoomable code360-heatmap" src="assets/code360-heatmap.png" alt="Code360 Heatmap" onerror="this.src='https://placehold.co/800x180/1a1a2e/f27c22?text=Code360+Heatmap';" loading="lazy">
+                                </div>
+                                <div class="heatmap-panel-overlay">
+                                    <div class="overlay-stats">
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-trophy"></i>
+                                            <div>
+                                                <span class="stat-value">Expert</span>
+                                                <span class="stat-label">Ninja Level</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-check-double"></i>
+                                            <div>
+                                                <span class="stat-value">300+</span>
+                                                <span class="stat-label">Solved</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-star"></i>
+                                            <div>
+                                                <span class="stat-value">1800+</span>
+                                                <span class="stat-label">Score</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="heatmap-stats-row">
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-code-branch"></i>
-                                    <div>
-                                        <span class="stat-value">30+</span>
-                                        <span class="stat-label">Repos</span>
+
+                            <!-- TUF Panel -->
+                            <div class="heatmap-panel" id="panel-tuf">
+                                <div class="heatmap-image-wrapper tuf-heatmap-wrapper">
+                                    <img id="tuf-heatmap-img" class="heatmap-zoomable" src="assets/tuf-heatmap-2026.png" alt="TakeUForward Heatmap" onerror="this.src='https://placehold.co/800x180/1a1a2e/ec4899?text=TUF+Heatmap';" loading="lazy">
+                                </div>
+                                <div class="heatmap-panel-overlay">
+                                    <div class="overlay-stats">
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-layer-group"></i>
+                                            <div>
+                                                <span class="stat-value">450+</span>
+                                                <span class="stat-label">Problems</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-chart-line"></i>
+                                            <div>
+                                                <span class="stat-value">92%</span>
+                                                <span class="stat-label">Completion</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-medal"></i>
+                                            <div>
+                                                <span class="stat-value">A5</span>
+                                                <span class="stat-label">Sheet</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="overlay-controls">
+                                        <select class="heatmap-select" id="tuf-heatmap-select">
+                                            <option value="2026">2026</option>
+                                            <option value="2025">2025</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-code-commit"></i>
-                                    <div>
-                                        <span class="stat-value">500+</span>
-                                        <span class="stat-label">Commits</span>
-                                    </div>
+                            </div>
+
+                            <!-- GitHub Panel -->
+                            <div class="heatmap-panel" id="panel-github">
+                                <div class="heatmap-image-wrapper github-heatmap-wrapper">
+                                    <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener">
+                                        <img class="heatmap-zoomable" src="https://ghchart.rshah.org/7c3aed/ManojPentapati" alt="GitHub Contribution Chart" loading="lazy">
+                                    </a>
                                 </div>
-                                <div class="heatmap-stat">
-                                    <i class="fas fa-code-pull-request"></i>
-                                    <div>
-                                        <span class="stat-value">50+</span>
-                                        <span class="stat-label">PRs</span>
+                                <div class="heatmap-panel-overlay">
+                                    <div class="overlay-stats">
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-code-branch"></i>
+                                            <div>
+                                                <span class="stat-value">30+</span>
+                                                <span class="stat-label">Repos</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-code-commit"></i>
+                                            <div>
+                                                <span class="stat-value">500+</span>
+                                                <span class="stat-label">Commits</span>
+                                            </div>
+                                        </div>
+                                        <div class="overlay-stat">
+                                            <i class="fas fa-code-pull-request"></i>
+                                            <div>
+                                                <span class="stat-value">50+</span>
+                                                <span class="stat-label">PRs</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
