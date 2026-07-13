@@ -607,22 +607,7 @@
 }
 
 /* Gradient accent bar on top on card hover (matches project cards) */
-.heatmap-viewer-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-purple), var(--accent-purple-light), var(--accent-cyan));
-    opacity: 0;
-    transition: var(--transition-fast);
-    z-index: 10;
-}
 
-.heatmap-viewer-card:hover::before {
-    opacity: 1;
-}
 
 /* Header Area with Navigation Tabs */
 .heatmap-viewer-header {
@@ -1068,4 +1053,13 @@ img.code360-heatmap {
         transform: scale(1.15) rotate(2deg);
         filter: drop-shadow(0 0 4px rgba(255, 69, 0, 0.8));
     }
+}
+
+/* Disable focus outline rings and tap highlights on click/tap */
+.heatmap-zoomable,
+.heatmap-image-wrapper,
+.heatmap-tab,
+.image-lightbox-content {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
