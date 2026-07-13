@@ -898,8 +898,66 @@
                                 <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener" class="profile-username">@ManojPentapati</a>
                             </div>
 
-                            <div class="github-svg-container" style="flex-grow: 1; display: flex; align-items: center;">
-                                <img src="https://github-stats-extended.vercel.app/api?username=ManojPentapati&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a&title_color=7C3AED&text_color=A0AEC0&icon_color=4ADE80" alt="GitHub Profile General Stats" loading="lazy">
+                            <div class="leetcode-stats-body" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; margin-top: 1rem;">
+                                <div class="leetcode-top-row">
+                                    <!-- Circular Meter -->
+                                    <div class="leetcode-progress-circle-wrapper">
+                                        <svg class="leetcode-progress-circle" width="100" height="100">
+                                            <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                                            <circle class="circle-progress circle-progress-github" cx="50" cy="50" r="40" style="stroke-dashoffset: 70;"></circle>
+                                        </svg>
+                                        <div class="circle-content">
+                                            <span class="circle-number">252</span>
+                                            <span class="circle-total">Contributions</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Progress Bars -->
+                                    <div class="leetcode-bars-wrapper">
+                                        <div class="stat-bar-item">
+                                            <div class="bar-labels">
+                                                <span class="difficulty-label"><span class="dot-easy" style="background: #2ea44f;"></span> Repositories</span>
+                                                <span class="bar-numbers">14</span>
+                                            </div>
+                                            <div class="progress-bar-bg">
+                                                <div class="progress-bar-fill" style="width: 70%; background: #2ea44f;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="stat-bar-item">
+                                            <div class="bar-labels">
+                                                <span class="difficulty-label"><span class="dot-medium" style="background: #0969da;"></span> Pull Requests</span>
+                                                <span class="bar-numbers">10+</span>
+                                            </div>
+                                            <div class="progress-bar-bg">
+                                                <div class="progress-bar-fill" style="width: 50%; background: #0969da;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="stat-bar-item">
+                                            <div class="bar-labels">
+                                                <span class="difficulty-label"><span class="dot-hard" style="background: #f38225;"></span> Total Stars</span>
+                                                <span class="bar-numbers">28</span>
+                                            </div>
+                                            <div class="progress-bar-bg">
+                                                <div class="progress-bar-fill" style="width: 45%; background: #f38225;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="leetcode-footer-stats" style="border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; margin-top: 0.5rem;">
+                                <div class="footer-stat-box">
+                                    <span>Primary Lang</span>
+                                    <h4>Java / Python</h4>
+                                </div>
+                                <div class="footer-stat-box">
+                                    <span>Followers</span>
+                                    <h4>15+</h4>
+                                </div>
+                                <div class="footer-stat-box">
+                                    <span>Contributions</span>
+                                    <h4>252 / Yr</h4>
+                                </div>
                             </div>
                         </div>
 
@@ -1048,7 +1106,7 @@
                             <div class="heatmap-panel" id="panel-github">
                                 <div class="heatmap-image-wrapper github-heatmap-wrapper">
                                     <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener">
-                                        <img class="heatmap-zoomable" src="https://ghchart.rshah.org/7c3aed/ManojPentapati" alt="GitHub Contribution Chart" loading="lazy">
+                                        <img class="heatmap-zoomable" src="https://ghchart.rshah.org/2ea44f/ManojPentapati" alt="GitHub Contribution Chart" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="heatmap-panel-overlay">
@@ -1077,6 +1135,25 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Contribution Graph Card (Always Visible) -->
+                    <div class="coding-card github-contribution-card" style="margin-top: 2rem; padding: 1.5rem 1.75rem;">
+                        <div class="card-header-row" style="margin-bottom: 1.25rem;">
+                            <div class="card-brand">
+                                <img class="brand-icon github-icon" src="assets/github-logo.ico" alt="GitHub Logo">
+                                <div>
+                                    <h3>GitHub Contributions Calendar</h3>
+                                    <span>ManojPentapati's live open-source contribution calendar</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener" class="profile-username">@ManojPentapati</a>
+                        </div>
+                        <div class="heatmap-image-wrapper github-heatmap-wrapper" style="border: 1px solid var(--border-subtle); border-radius: 12px;">
+                            <a href="https://github.com/ManojPentapati" target="_blank" rel="noopener" style="display: flex; justify-content: center; width: 100%;">
+                                <img class="heatmap-zoomable" src="https://ghchart.rshah.org/2ea44f/ManojPentapati" alt="GitHub Contribution Chart" loading="lazy">
+                            </a>
                         </div>
                     </div>
                 </div>

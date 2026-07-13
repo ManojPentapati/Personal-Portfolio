@@ -1043,3 +1043,10 @@ img.code360-heatmap {
 .github-icon {
     filter: invert(1) brightness(2);
 }
+
+/* Green circular meter styling for GitHub Profile Card */
+.circle-progress-github {
+    stroke: #2ea44f !important;
+    stroke-dasharray: 251.2;
+    stroke-dashoffset: 70;
+}
