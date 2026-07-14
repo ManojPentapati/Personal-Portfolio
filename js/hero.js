@@ -1,29 +1,49 @@
 // ============================================
-// HERO — Typewriter Effect on Subtitle
+// HERO — Dynamic Looping Typewriter Effect
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.getElementById('heroSubtitle');
     if (!subtitle) return;
 
-    const fullText = subtitle.getAttribute('data-text') || 'Software Engineer';
+    // Define multiple roles showcasing diverse skills
+    const roles = ['Software Engineer', 'Full-Stack Developer', 'Data Science Specialist', 'Competitive Programmer'];
+    let roleIndex = 0;
     let charIndex = 0;
-    const typingSpeed = 80; // ms per character
-    const startDelay = 800; // wait for hero fade-in animation
+    let isDeleting = false;
+    const typingSpeed = 100; // ms per character typing
+    const erasingSpeed = 50;  // ms per character deleting
+    const delayBetweenRoles = 2000; // time showing fully typed role
 
-    function typeChar() {
-        if (charIndex < fullText.length) {
-            subtitle.textContent += fullText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeChar, typingSpeed);
+    function typeEffect() {
+        const currentRole = roles[roleIndex];
+        
+        if (isDeleting) {
+            // Erase character
+            subtitle.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
         } else {
-            // Typing complete — keep cursor blinking for 2s then hide it
-            setTimeout(() => {
-                subtitle.classList.add('typing-done');
-            }, 2000);
+            // Type character
+            subtitle.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        // Handle states
+        if (!isDeleting && charIndex === currentRole.length) {
+            // Word fully typed - wait then start deleting
+            isDeleting = true;
+            setTimeout(typeEffect, delayBetweenRoles);
+        } else if (isDeleting && charIndex === 0) {
+            // Word fully erased - move to next word
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeEffect, 400); // pause before typing next role
+        } else {
+            // Continue typing/erasing
+            setTimeout(typeEffect, isDeleting ? erasingSpeed : typingSpeed);
         }
     }
 
-    // Start typing after the hero animation finishes
-    setTimeout(typeChar, startDelay);
+    // Start typewriter loop after initial hero load delay
+    setTimeout(typeEffect, 1000);
 });
