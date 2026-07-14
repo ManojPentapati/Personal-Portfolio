@@ -3,16 +3,20 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ---- Skills Category Tab Filtering ----
+    // ---- Skills Category Tab Filtering & Searching ----
     const tabBtns = document.querySelectorAll('.skills-tab-btn');
     const cards = document.querySelectorAll('.skill-detail-card');
+    const searchInput = document.getElementById('skillsSearch');
     
     // Track active timeouts to prevent conflicts during rapid switching
     const cardTimeouts = new Map();
 
     function filterSkills(category, animate = true) {
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
         cards.forEach(card => {
             const categories = card.getAttribute('data-categories').split(' ');
+            const skillName = card.querySelector('h3').textContent.toLowerCase();
             
             // Clear any active transitions for this card
             if (cardTimeouts.has(card)) {
@@ -20,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 cardTimeouts.delete(card);
             }
 
-            if (categories.includes(category)) {
+            const matchesCategory = categories.includes(category);
+            const matchesSearch = query === '' || skillName.includes(query);
+
+            if (matchesCategory && matchesSearch) {
                 card.style.display = 'flex';
                 if (animate) {
                     card.offsetHeight; // Force reflow
@@ -59,7 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Run initial filter on page load instantly without animation to avoid rendering layout shifts
+    // Handle search input events
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            const activeTab = document.querySelector('.skills-tab-btn.active');
+            const category = activeTab ? activeTab.getAttribute('data-category') : 'languages';
+            filterSkills(category, true);
+        });
+    }
+
+    // Run initial filter on page load instantly without animation
     filterSkills('languages', false);
 
     // ---- Animated Progress Bars (Professional Skills) ----
